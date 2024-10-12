@@ -33,9 +33,12 @@
     justify-content:space-evenly;
     align-items: center;
     background-color: #fffdfb;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
     width: 90%;
     min-height: 1.5em;
+}
+.mid-content-items-last{
+    margin-bottom: 1.5em;
 }
 
 .mid-content-items-titles{
