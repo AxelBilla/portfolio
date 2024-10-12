@@ -225,6 +225,31 @@ body{
     margin-top:1em;
 }
 
+.lang{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    z-index: 0;
+    justify-content: space-evenly;
+    width: 20%;
+    height: 20%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: -5%;
+    margin-right: 0em;
+}
+
+.fr_lang, .en_lang{
+    width: 45%;
+    height: 70%;
+
+}
+#en, #fr{
+    height: 100%;
+    width: 100%;
+}
+
 
 /* MEDIUM VERSION */
 /* Temp style for the error screen when using [MEDIUM] & [SMALL] screens */
@@ -294,6 +319,15 @@ body{
 }
 .br-3{
     border-radius: 3em;
+}
+.br-4{
+    border-radius: 4em;
+}
+.br-5{
+    border-radius: 5em;
+}
+.br-6{
+    border-radius: 6em;
 }
 
 
