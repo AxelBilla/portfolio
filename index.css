@@ -228,15 +228,13 @@ body{
 .lang{
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
     z-index: 0;
     justify-content: space-evenly;
-    width: 20%;
     height: 20%;
     position: fixed;
     bottom: 0;
     right: 0;
-    margin-bottom: -5%;
+    margin-bottom: -4%;
     margin-right: 0em;
 }
 
