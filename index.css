@@ -80,7 +80,6 @@ body{
     text-align: right;
     position: fixed;
     top: 0;
-    margin-top: 0.3em;
     transition: top 0.3s;
 }
 
