@@ -284,6 +284,10 @@ body{
     user-select: text;
 }
 
+.click-a-like{
+    cursor: pointer;
+}
+
 /* Width Parameters */
 .min-width-1{
     min-width: 3em;
