@@ -1,0 +1,108 @@
+
+/* Main Content */
+.mid-content{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: #ffe2be;
+    margin-top: 6em;
+    margin-bottom: 1em;
+    min-width: 90%;
+    height: 100%;
+}
+
+.mid-content-title{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: #fffdfb;
+    width: 95%;
+    height: 1.5em;
+}
+
+
+.mid-content-items{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #fffdfb;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-bottom: 1em;
+    width: 95%;
+
+}
+
+.mid-content-items-objects{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ffead1;
+    width: 90%;
+    height: 100%;
+    margin: 2vw;
+}
+
+.objects-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2vw;
+    width: 60%;
+    height: 7vw;
+    background-color: #fffdfb;
+    border-radius: 35px;
+}
+
+.mid-content-items-objects h1{
+    margin-top: 0;
+    margin-bottom: -1vw;
+}
+.mid-content-items-objects a{
+    margin-top: 0.4vw;
+    margin-bottom: -1vw;
+}
+
+.mid-content-items-objects-boxes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1vw;
+}
+
+.mid-content-items-objects-boxes img{
+    height: 30vw;
+    margin-left: 0.5vw;
+    margin-left: 5vw;
+    border-radius: 10px;
+}
+
+.mid-content-items-objects-boxes div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin: 2vw;
+}
+
+.boxes-titles{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fffdfb;
+    width: 80%;
+    border-radius: 35px;
+    font-size: 1.2em;
+}

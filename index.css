@@ -13,15 +13,31 @@
 } 
 
 @font-face {
-    font-family: 'Iconic';
+    font-family: 'Iconic-Bold';
     src: url('./assets/fonts/iconic-b.ttf');
 }
 .f-iconic {
-    font-family: 'Iconic';
+    font-family: 'Iconic-Bold';
+}
+
+@font-face {
+    font-family: 'Iconic-Regular';
+    src: url('./assets/fonts/iconic.ttf');
+}
+.f-iconic-reg {
+    font-family: 'Iconic-Regular';
+}
+
+@font-face {
+    font-family: 'TT-Hoves';
+    src: url('./assets/fonts/tt-hoves.ttf');
+}
+.f-hoves{
+    font-family: 'TT-Hoves';
 }
 
 /* Screen Size Control */
-@media screen and (min-width: 1040px) { /* BIG Window */
+@media screen and (min-width: 850px) { /* BIG Window */
     #small-version {
         display:none
     }
@@ -29,7 +45,7 @@
         display:none
     }}
 
-@media screen and (max-width: 1040px) and (min-width: 500px) { /* MEDIUM Window */
+@media screen and (max-width: 850px) and (min-width: 500px) { /* MEDIUM Window */
     #small-version {
         display:none
     }
