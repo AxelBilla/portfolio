@@ -145,7 +145,7 @@
     flex-direction: column;
     justify-content: space-around;
     width: 40vw;
-    height: 4vw;
+    min-height: 4vw;
     font-size: 1.3em;
     margin-bottom: 0vw;
     background-color: #ffead1;
