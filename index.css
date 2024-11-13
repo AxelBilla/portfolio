@@ -41,25 +41,13 @@
     #small-version {
         display:none
     }
-    #medium-version {
-        display:none
-    }}
+}
 
-@media screen and (max-width: 850px) and (min-width: 500px) { /* MEDIUM Window */
-    #small-version {
-        display:none
-    }
-    #big-version {
-        display:none
-    }}
-
-@media screen and (max-width: 500px) { /* SMALL Window */
+@media screen and (max-width: 850px) { /* SMALL Window */
     #big-version {
       display:none
     }
-    #medium-version {
-        display:none
-    }}
+}
 
 /*Where it all begins*/
 /* The Origin */
@@ -250,7 +238,7 @@ body{
     position: fixed;
     bottom: 0;
     right: 0;
-    margin-bottom: -4%;
+    margin-bottom: -7vh;
     margin-right: 0em;
 }
 

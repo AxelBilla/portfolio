@@ -58,7 +58,7 @@
 
 .mid-content-items-titles-name{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-grow: 1;
     justify-content:space-evenly;
     align-items: center;
