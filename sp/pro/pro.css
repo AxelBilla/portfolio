@@ -81,7 +81,8 @@
 }
 
 .mid-content-items-objects-boxes img{
-    height: 30vw;
+    max-height: 30vw;
+    max-width: 30%;
     margin-left: 0.5vw;
     margin-left: 5vw;
     border-radius: 10px;
