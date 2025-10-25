@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", ()=>{
     const nav_KOMPACTED = new Kompacted();
-    nav_KOMPACTED.name = "nav";
     let nav_scope = document.body;
 
     nav_KOMPACTED.set("nav", nav_pages);
@@ -26,7 +25,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 class nav {
     constructor(name, lang, onclick=()=>{}){
-        this.display_names = {}
+        this.display_names = Language.new();
         Language.setValue(this.display_names, name, lang);
         this.onclick=onclick;
     }

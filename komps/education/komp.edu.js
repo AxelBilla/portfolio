@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", ()=>{
     const edu_KOMPACTED = new Kompacted();
-    edu_KOMPACTED.name = "edu";
     let edu_scope = document.body;
 
     edu_KOMPACTED.set("education_pages", eduPages);
@@ -53,7 +52,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 class Education{
     constructor(name, location, start_year, end_year, content, lang){
-        this.info = {};
+        this.info = Language.new();;
         let edu_infos = new Education.INFO(name, location, start_year, end_year, content);
         Language.setValue(this.info, edu_infos, lang)
     }

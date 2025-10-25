@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", ()=>{
     const project_KOMPACTED = new Kompacted();
-    project_KOMPACTED.name = "pr";
     let project_scope = document.body;
 
     project_KOMPACTED.set("projects", projects)
@@ -60,7 +59,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 class Project{
     constructor(name, date, url, content, lang=Language.default) {
-        this.content = {};
+        this.content = Language.new();
         let info = new Project.INFO(name, date, url, content);
         Language.setValue(this.content, info, lang)
     }

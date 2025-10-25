@@ -12,6 +12,9 @@ class Language{
         this.event_onUpdate.trigger(lang);
     }
     
+    static new(){
+        return {};
+    }
     static getValue(multilingual_object, lang=Language.default){
         if(multilingual_object.hasOwnProperty(lang)) return multilingual_object[lang];
         return multilingual_object[Language.default];
