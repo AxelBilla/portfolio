@@ -3,95 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script language="JavaScript" type="text/javascript" src="assets/js/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/navbar.js"></script>
-    <script type="text/javascript" src="assets/js/easter.js"></script>
-    <script type="text/javascript" src="assets/js/boot.js"></script>
-    <title>Axel - Accueil</title>
-</head>
-<body id="home">
-<div style="display: none;" id="popup"> 
-    <div id="popup-content">
-        <div id="popup-content-text" class="f-iconic">
-            <p>[W.I.P]</p>
-            <p style="margin-top: -0.5em;">This website is nowhere near finished</p>
-            <p style="margin-top: -0.5em;">Tread with caution</p>
-        </div>
-    </div>    
-</div> 
-<div class="big-version default-font" id="big-version"> <!--Main UI, BIG-->
-    <div class="bg-nav f-qaz" id="bg-nav">
-        <div class="nav-content br-05"> <!--Top Naviguation Bar-->
-            <a href="#" class="element-para-nav para-nav-one h-clicks fs-3 br-05"> <!--Main Logo/Title-->
-                Axel Billa
-                <input type="button" onclick="easter()" value="" style="position:absolute;border: none;outline: none;background: #ffffff00;"/>
-            </a> 
-            <a href="sp/me/me.html" class="element-para-nav min-width-4 h-clicks fs-2 br-05">
-                A Propos
-            </a> 
-            <a href="sp/pro/projects.html" class="element-para-nav h-clicks fs-2 br-05">
-                Projets
-            </a> 
-            <a href="sp/ski/skills.html" class="element-para-nav min-width-1 h-clicks fs-2 br-05">
-                Veille
-            </a> 
-            <a href="sp/edu/education.html" class="element-para-nav para-nav-last h-clicks fs-2 br-05">
-                Education
-            </a> 
-        </div>
-    </div>
-    <div class="mid-content br-2"> 
-        <div class="mid-content-title no-clicks f-qaz fs-3 br-2">Portfolio</div> 
-        <img src="assets/images/eye_nozoku_shinen.png" class="easter" id="easter">
-        <div class="mid-content-icons margin-bottom-1 f-iconic br-2">
-            <a href="sp/pro/projects.html" class="element-para-mid h-clicks br-2">
-                <p class="element-para-mid-titles">Projets</p>
-                <img src="./assets/images/servers.png" class="element-para-mid-icons br-2">
-            </a> 
-            <a href="sp/me/me.html" class="element-para-mid h-clicks br-2">
-                <p class="element-para-mid-titles">A propos</p>
-                <img src="./assets/images/skills.png" class="element-para-mid-icons br-2" style="max-height: 50%; margin-top: 1em;">
-            </a> 
-            <a href="sp/ski/skills.html" class="element-para-mid h-clicks br-2">
-                <p class="element-para-mid-titles">Veille</p>
-                <img src="./assets/images/research_doc.png" class="element-para-mid-icons br-2">
-            </a> 
-        </div>
-        <div class="mid-content-icons f-iconic br-2">
-            <a href="sp/soc/socials.html" class="element-para-mid h-clicks br-2">
-                <p class="element-para-mid-titles">Socials</p>
-                <img src="./assets/images/internet.png" class="element-para-mid-icons br-2">
-            </a> 
-            <a href="sp/cv/cv.html" class="element-para-mid h-clicks br-2">
-                <p class="element-para-mid-titles">CV</p>
-                <img src="./assets/images/ch_sheet.png" class="element-para-mid-icons br-2">
-            </a> 
-            <a href="sp/edu/education.html" class="element-para-mid h-clicks br-2">
-                <p class="element-para-mid-titles">Education</p>
-                <img src="./assets/images/school_books.png" class="element-para-mid-icons br-2">
-            </a> 
-        </div>
-    </div>
-    <!-- <div class="bottom-content br-2" id="contact">
-        <div class="mid-content-title no-clicks f-qaz fs-3 br-2">Credits</div> 
-        <div class="element-para-bot br-2">
-            ...
-        </div> 
-    </div> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     
-    <div class="lang">
-        <a href="" class="fr_lang"><img src="assets/images/fr_fr.png" id="fr"/></a>
-        <a href="index_en.html" class="en_lang"><img src="assets/images/us_en.png" id="en"/></a>
-    </div>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="./scripts/main.js"></script>
+    <script type="text/javascript" src="./scripts/observer.js"></script>
+    <script type="text/javascript" src="./scripts/language_handler.js"></script>
 
-</div>
+    <!-- KOMPS -->
+    <script type="text/javascript" src="./komps/kompacted.js"></script>
+        <!-- NAVIGATION -->
+        <script type="text/javascript" src="./komps/navigation/komp.nav.js"></script>
+        <link rel="stylesheet" type="text/css" href="./komps/navigation/komp.nav.style.css">
+        <!-- EDUCATION -->
+        <script type="text/javascript" src="./komps/education/komp.edu.js"></script>
+        <link rel="stylesheet" type="text/css" href="./komps/education/komp.edu.style.css">
+        <!-- PROJECTS -->
+        <script type="text/javascript" src="./komps/project/komp.project.js"></script>
+        <link rel="stylesheet" type="text/css" href="./komps/project/komp.project.style.css">
 
-<div class="mobile-temp" id="small-version"> <!--TOO SMALL WARNING-->
-    <p class="fs-1">Sorry, you're not allowed around these parts.</p>
-    <p class="fs-05">The lower res version is being worked on.</p>
-</div>
-
-
+    <title>Axel B.</title>
+</head>
+<body>
+    <home>
+        <nav>
+            <foreach src="nav" as="nav-icon"></foreach>
+        </nav>
+        <content>
+            <foreach src="projects" as="project"></foreach>
+            <foreach src="education_pages" as="education_page"></foreach>
+        </content>
+        <footer>
+        
+        </footer>
+    </home>
 </body>
 </html>
