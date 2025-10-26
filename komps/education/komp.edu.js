@@ -17,9 +17,30 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let setValue = ()=>{
-                    let page = Language.getValue(JSON.parse(self.Values().info), Language.current);
-                    let left_to_update = Education.setHTML(self, page);
-                    kmptd.load(left_to_update, true);
+                    let values = Language.getValue(JSON.parse(self.Values().info), Language.current);
+                    let ps = self.getElementsByTagName("p");
+                    let spns = ps[2].getElementsByTagName("span");
+                    let content = self.getElementsByTagName("content")[0];
+
+                    ps[0].innerText = values.name;
+                    ps[1].innerText = values.location;
+                    spns[0].innerText = values.start_year;
+                    spns[1].innerText = values.end_year;
+
+                    let titles = Object.values(values.content.titles);
+                    let para = Object.values(values.content.paragraphs);
+                    let imgs = Object.values(values.content.images);
+
+                    content.replaceChildren();
+                    for(let i = 0; i<titles.length; i++){
+                        let el_content = document.createElement("kompact");
+                        el_content.setAttribute("name", "education_content");
+                        el_content.setAttribute("title", titles[i]);
+                        el_content.setAttribute("paragraph", para[i]);
+                        el_content.setAttribute("image", imgs[i]);
+                        content.appendChild(el_content);
+                    }
+                    kmptd.load(content, true);
                 }
                 setValue();
                 Language.onUpdate(setValue);
@@ -67,31 +88,6 @@ class Education{
         }
     }
 
-    static setHTML(html_element, values){
-        let ps = html_element.getElementsByTagName("p");
-        let spns = ps[2].getElementsByTagName("span");
-        let content = html_element.getElementsByTagName("content")[0];
-
-        ps[0].innerText = values.name;
-        ps[1].innerText = values.location;
-        spns[0].innerText = values.start_year;
-        spns[1].innerText = values.end_year;
-
-        let titles = Object.values(values.content.titles);
-        let para = Object.values(values.content.paragraphs);
-        let imgs = Object.values(values.content.images);
-
-        content.replaceChildren();
-        for(let i = 0; i<titles.length; i++){
-            let el_content = document.createElement("kompact");
-            el_content.setAttribute("name", "education_content");
-            el_content.setAttribute("title", titles[i]);
-            el_content.setAttribute("paragraph", para[i]);
-            el_content.setAttribute("image", imgs[i]);
-            content.appendChild(el_content);
-        }
-        return content;
-    }
 }
 
 

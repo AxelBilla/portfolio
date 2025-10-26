@@ -21,6 +21,12 @@
         <!-- PROJECTS -->
         <script type="text/javascript" src="./komps/project/komp.project.js"></script>
         <link rel="stylesheet" type="text/css" href="./komps/project/komp.project.style.css">
+        <!-- SOCIALS -->
+        <script type="text/javascript" src="./komps/social/komp.social.js"></script>
+        <link rel="stylesheet" type="text/css" href="./komps/social/komp.social.style.css">
+        <!-- FEED -->
+        <script type="text/javascript" src="./komps/feed/komp.feed.js"></script>
+        <link rel="stylesheet" type="text/css" href="./komps/feed/komp.feed.style.css">
 
     <title>Axel B.</title>
 </head>
@@ -30,8 +36,10 @@
             <foreach src="nav" as="nav-icon"></foreach>
         </nav>
         <content>
+            <foreach src="feed" as="post"></foreach>
             <foreach src="projects" as="project"></foreach>
             <foreach src="education_pages" as="education_page"></foreach>
+            <foreach src="socials" as="social"></foreach>
         </content>
         <footer>
         

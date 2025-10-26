@@ -7,7 +7,7 @@ class Language{
     static onUpdate(func){
         this.event_onUpdate.subscribe(func);
     }
-    static setLanguage(lang){
+    static setLanguage(lang){ 
         this.current = lang;
         this.event_onUpdate.trigger(lang);
     }
