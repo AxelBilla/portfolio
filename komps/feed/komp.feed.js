@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self) => {
                 const setValue = ()=> {
-                    let values = Language.getValue(JSON.parse(self.Values().content), Language.current);
+                    let values = Language.getValue(JSON.parse(self.Values().content), Language.getCurrent());
                     
                     let title = self.getElementsByTagName('titles')[0];
                     let title_text = title.getElementsByTagName('p')[0];
@@ -86,7 +86,7 @@ class Post{
 //////////////////////////////////
 
 const posts = [
-    new Post("test_1", {1: {p1: "1-1_test_p1"}}, "fr-FR"),
-    new Post("test_2", {1: {p1: "2-1_test_p1", img1: {src: "placeholder.png", alt: "2-1_test_img1"}, p2: "2-1_test_p2"}, 2: {p1: "2-2_test_p1"}}, "fr-FR"),
-    new Post("test_3", {1: {p1: "3-1_test_p1"}, 2: {p1: "3-2_test_p1", img1: {src: "placeholder.png", alt: "3-2_test_img1"}}, 3:{p1: "3-3_test_p1"}}, "fr-FR"),
+    new Post("test_1", {1: {p1: "1-1_test_p1"}}, Language.list.FRENCH.code),
+    new Post("test_2", {1: {p1: "2-1_test_p1", img1: {src: "placeholder.png", alt: "2-1_test_img1"}, p2: "2-1_test_p2"}, 2: {p1: "2-2_test_p1"}}, Language.list.FRENCH.code),
+    new Post("test_3", {1: {p1: "3-1_test_p1"}, 2: {p1: "3-2_test_p1", img1: {src: "placeholder.png", alt: "3-2_test_img1"}}, 3:{p1: "3-3_test_p1"}}, Language.list.FRENCH.code),
 ]

@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let setValue = ()=>{
-                    let values = Language.getValue(JSON.parse(self.Values().info), Language.current);
+                    let values = Language.getValue(JSON.parse(self.Values().content), Language.getCurrent());
                     let ps = self.getElementsByTagName("p");
                     let spns = ps[2].getElementsByTagName("span");
                     let content = self.getElementsByTagName("content")[0];
@@ -73,9 +73,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 class Education{
     constructor(name, location, start_year, end_year, content, lang){
-        this.info = Language.new();;
+        this.content = Language.new();;
         let edu_infos = new Education.INFO(name, location, start_year, end_year, content);
-        Language.setValue(this.info, edu_infos, lang)
+        Language.setValue(this.content, edu_infos, lang)
     }
 
     static INFO = class{
@@ -113,7 +113,7 @@ const eduPages = [
             img2: "phishing.png",
             img3: "programming.png"
         }
-    }, "fr-FR"),
+    }, Language.list.FRENCH.code),
     new Education("Bac Pro Systèmes Numériques Option RISC", "Lycée Professionnel Jacques Prévert", 2019, 2023, {
         titles: {
             t1: "Appréhender la mise en oeuvre d'un projet simulé ou réel d'installation d'un système",
@@ -133,10 +133,10 @@ const eduPages = [
             img3: "router.png",
             img4: "filled_letter.png"
         }
-    }, "fr-FR"),
+    }, Language.list.FRENCH.code),
 ]
 
-Language.setValue(eduPages[0].info,
+Language.setValue(eduPages[0].content,
     new Education.INFO(
         "BTS Systèmes Informatiques aux Entreprises Option SLAM\n[Higher BTEC Equivalent]",
         "Paris Turgot",
@@ -157,9 +157,9 @@ Language.setValue(eduPages[0].info,
                 img2: "phishing.png",
                 img3: "programming.png"
             }
-        }), "en-US");
+        }), Language.list.ENGLISH.code);
 
-Language.setValue(eduPages[1].info,
+Language.setValue(eduPages[1].content,
     new Education.INFO(
         "Bac Pro Systèmes Numériques Option RISC\n[BTEC Equivalent]",
         "Lycée Professionnel Jacques Prévert",
@@ -184,4 +184,4 @@ Language.setValue(eduPages[1].info,
                 img4: "filled_letter.png"
             }
         }
-    ), "en-US");
+    ), Language.list.ENGLISH.code);

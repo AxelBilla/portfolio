@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let setValue = ()=> {
-                    let values = Language.getValue(JSON.parse(self.Values().content), Language.current);
+                    let values = Language.getValue(JSON.parse(self.Values().content), Language.getCurrent());
 
                     let title = self.getElementsByTagName('titles')[0];
                     let title_text = title.getElementsByTagName('p');
@@ -90,10 +90,10 @@ const projects = [
         },
         details: {
             title: "Détails",
-            text: "Technologies: HTML/CSS, JavaScript, JQuery."
+            text: "Stack: HTML/CSS, JavaScript, JQuery."
         },
         images: {img1: ""}
-    }, "fr-FR"),
+    }, Language.list.FRENCH.code),
     
     new Project("Caloric Fool", "Avril 2025", "https://calorie.billiard.dev/", {
         main: {
@@ -106,8 +106,40 @@ const projects = [
         },
         details: {
             title: "Détails",
-            text: "Technologies:\nHTML/CSS, PostgreSQL, Javascript, Node.js, Express.js, JQuery."
+            text: "Stack:\nHTML/CSS, PostgreSQL, Javascript, Node.js, Express.js, JQuery."
         },
         images: {img1: ""}
-    }, "fr-FR")
+    }, Language.list.FRENCH.code)
 ]
+
+Language.setValue(projects[0].content, new Project.INFO("Web Reader", "October 2024", "https://reader.billiard.dev/", {
+    main: {
+        title: "Book Reader\"From comics to manga, and even novels.\"",
+        text: "Created for a project given by our teachers with the aim of exploiting our HTML and CSS skills by developing a themed personal website while respecting a given set of instructions."
+    },
+    requirement: {
+        title: "Requirements",
+        text: "Redirection to other pages; Hyperlinks to thematically-related third-party websites; Using tables with headers, row-column merging and images; Using forms; One-click stylesheet switch."
+    },
+    details: {
+        title: "Details",
+        text: "Stack: HTML/CSS, JavaScript, JQuery."
+    },
+    images: {img1: ""}
+}), Language.list.ENGLISH.code);
+
+Language.setValue(projects[1].content, new Project.INFO("Caloric Fool", "April 2025", "https://calorie.billiard.dev/", {
+    main: {
+        title: "Calorie Tracker",
+        text: "Created for a project given by our teachers with the aim of exploiting the MVC model by developing a themed personal website while respecting a given set of instructions."
+    },
+    requirement: {
+        title: "Requirements",
+        text: "Exploiting the MVC model; Making a Conceptual Data Model; Setting up a Database; Safe SQL requests; Implementing CRUD(s); Object Oriented Programming; Providing test data."
+    },
+    details: {
+        title: "Details",
+        text: "Stack:\nHTML/CSS, PostgreSQL, Javascript, Node.js, Express.js, JQuery."
+    },
+    images: {img1: ""}
+}), Language.list.ENGLISH.code);

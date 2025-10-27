@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             "load", (self)=>{
                 let nav_data = self.Values();
                 let setValue = ()=>{
-                    self.getElementsByTagName("p")[0].innerText = Language.getValue(JSON.parse(nav_data.display_names), Language.current);
+                    self.getElementsByTagName("p")[0].innerText = Language.getValue(JSON.parse(nav_data.content), Language.getCurrent());
                 }
                 setValue();
                 Language.onUpdate(setValue);
@@ -25,8 +25,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 class nav {
     constructor(name, lang, onclick=()=>{}){
-        this.display_names = Language.new();
-        Language.setValue(this.display_names, name, lang);
+        this.content = Language.new();
+        Language.setValue(this.content, name, lang);
         this.onclick=onclick;
     }
 }
@@ -37,15 +37,12 @@ class nav {
 //////////////////////////////////
 
 const nav_pages = [
-    new nav("projets", "fr-FR", (e)=>{
-        // TEST
-        Language.setLanguage(Language.current == Language.default ? "en-US" : "fr-FR");
-    }),
-    new nav("cv", "fr-FR", (e)=>{console.log(e)}),
-    new nav("accueil", "fr-FR", (e)=>{console.log(e)}),
-    new nav("education", "fr-FR", (e)=>{console.log(e)}),
-    new nav("socials", "fr-FR", (e)=>{console.log(e)})
+    new nav("projets", Language.list.FRENCH.code, (e)=>{console.log(e)}),
+    new nav("cv", Language.list.FRENCH.code, (e)=>{console.log(e)}),
+    new nav("accueil", Language.list.FRENCH.code, (e)=>{console.log(e)}),
+    new nav("education", Language.list.FRENCH.code, (e)=>{console.log(e)}),
+    new nav("socials", Language.list.FRENCH.code, (e)=>{console.log(e)})
 ]
 
-Language.setValue(nav_pages[0].display_names, "projects", "en-US");
-Language.setValue(nav_pages[2].display_names, "home", "en-US");
+Language.setValue(nav_pages[0].content, "projects", Language.list.ENGLISH.code);
+Language.setValue(nav_pages[2].content, "home", Language.list.ENGLISH.code);
