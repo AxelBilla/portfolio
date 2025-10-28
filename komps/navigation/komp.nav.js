@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
                 Language.onUpdate(setValue);
                 
                 self.addEventListener("click", ()=>{
-                    WebMove.goto(nav_data.endpoint);
+                    Web.Move.goto(nav_data.endpoint);
                 })
             }
         )

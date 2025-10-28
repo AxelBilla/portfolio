@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", ()=>{
     const project_KOMPACTED = new Kompacted(true, "project");
-    KOMPACTED["project"] = project_KOMPACTED;
     
     let project_scope = document.body;
 
