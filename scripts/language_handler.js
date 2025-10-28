@@ -26,7 +26,7 @@ class Language{
         this.current = lang;
         this.event_onUpdate.trigger(lang);
     }
-    static getValue(multilingual_object, lang=Language.getDefault()){
+    static getValue(multilingual_object, lang=Language.getCurrent()){
         if(multilingual_object.hasOwnProperty(lang)) return multilingual_object[lang];
         return multilingual_object[Language.getDefault()];
     }

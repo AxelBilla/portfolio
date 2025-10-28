@@ -1,5 +1,7 @@
 window.addEventListener("DOMContentLoaded", ()=>{
-    const project_KOMPACTED = new Kompacted();
+    const project_KOMPACTED = new Kompacted(true, "project");
+    KOMPACTED["project"] = project_KOMPACTED;
+    
     let project_scope = document.body;
 
     project_KOMPACTED.set("projects", projects)
@@ -30,7 +32,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let setValue = ()=> {
-                    let values = Language.getValue(JSON.parse(self.Values().content), Language.getCurrent());
+                    let values = Language.getValue(JSON.parse(self.Values().content));
 
                     let title = self.getElementsByTagName('titles')[0];
                     let title_text = title.getElementsByTagName('p');

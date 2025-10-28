@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", ()=>{
-    const edu_KOMPACTED = new Kompacted();
+    const edu_KOMPACTED = new Kompacted(true, "edu");
+    
     let edu_scope = document.body;
 
     edu_KOMPACTED.set("education_pages", eduPages);
@@ -17,7 +18,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let setValue = ()=>{
-                    let values = Language.getValue(JSON.parse(self.Values().content), Language.getCurrent());
+                    let values = Language.getValue(JSON.parse(self.Values().content));
                     let ps = self.getElementsByTagName("p");
                     let spns = ps[2].getElementsByTagName("span");
                     let content = self.getElementsByTagName("content")[0];

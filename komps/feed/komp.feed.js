@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", ()=>{
-    const feed_KOMPACTED = new Kompacted();
+    const feed_KOMPACTED = new Kompacted(true,"feed");
+    
     const feed_scope = document.body;
 
     feed_KOMPACTED.set("feed", posts)
@@ -15,7 +16,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self) => {
                 const setValue = ()=> {
-                    let values = Language.getValue(JSON.parse(self.Values().content), Language.getCurrent());
+                    let values = Language.getValue(JSON.parse(self.Values().content));
                     
                     let title = self.getElementsByTagName('titles')[0];
                     let title_text = title.getElementsByTagName('p')[0];

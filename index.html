@@ -12,6 +12,9 @@
 
     <!-- KOMPS -->
     <script type="text/javascript" src="./komps/kompacted.js"></script>
+        <!-- PAGES -->
+        <script type="text/javascript" src="./komps/pages/komp.pages.js"></script>
+        <link rel="stylesheet" type="text/css" href="./komps/pages/komp.pages.style.css">
         <!-- NAVIGATION -->
         <script type="text/javascript" src="./komps/navigation/komp.nav.js"></script>
         <link rel="stylesheet" type="text/css" href="./komps/navigation/komp.nav.style.css">
@@ -34,20 +37,11 @@
     <title>Axel B.</title>
 </head>
 <body>
-    <home>
-        <nav>
-            <foreach src="nav" as="nav-icon"></foreach>
-        </nav>
-        <content>
-            <foreach src="langs" as="lang_icon"></foreach>
-            <foreach src="feed" as="post"></foreach>
-            <foreach src="projects" as="project"></foreach>
-            <foreach src="education_pages" as="education_page"></foreach>
-            <foreach src="socials" as="social"></foreach>
-        </content>
-        <footer>
-        
-        </footer>
-    </home>
+    <nav>
+        <foreach src="nav" as="nav_icon"></foreach>
+    </nav>
+    <main>
+        <kompact name="home"></kompact>
+    </main>
 </body>
 </html>

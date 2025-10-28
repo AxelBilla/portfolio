@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", ()=>{
-    const lang_KOMPACTED = new Kompacted();
+    const lang_KOMPACTED = new Kompacted(true, "lang");
+    
     const lang_scope = document.body;
 
     lang_KOMPACTED.set("langs", Language.list);

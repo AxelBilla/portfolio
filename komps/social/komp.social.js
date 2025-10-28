@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", ()=>{
-    const social_KOMPACTED = new Kompacted();
+    const social_KOMPACTED = new Kompacted(true, "social");
     const social_scope = document.body;
 
     social_KOMPACTED.set("socials", socials)
