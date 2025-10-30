@@ -24,24 +24,29 @@ class Web{
         }
     }
     static Create = class{
-        static Element(name, html, vars={}, vars_attr = "var"){
+        static Element(name, html, vars={}, vars_attr_name = "var"){
             let element = document.createElement(name);
             element.innerHTML = html;
             for(let v in vars){
-                for(let el of element.getElementsByAttribute(vars_attr, v)){
+                for(let el of element.getElementsByAttribute(vars_attr_name, v)){
                     if(typeof(vars[v])===typeof({})){
+                        if(vars[v].hasOwnProperty("innerHTML")){
+                            el.innerHTML = vars[v].innerHTML;
+                            delete vars[v].innerHTML;
+                        }
                         Web.Set.Attributes(el, vars[v])
-                    } else {
+                    } 
+                    if(typeof(vars[v])===typeof("u")){
                         el.innerHTML = vars[v];
                     }
-                    el.removeAttribute(vars_attr);
+                    el.removeAttribute(vars_attr_name);
                 }
             }
             return element;
         }
-        static Elements(parent, name, html, vars={}, vars_attr = "var"){
+        static Elements(parent, name, html, vars={}, vars_attr_name = "var"){
             for (let value of Object.values(values)){
-                parent.append(Web.Create.Element(name, html, vars, vars_attr));
+                parent.append(Web.Create.Element(name, html, vars, vars_attr_name));
             }
         }
         
@@ -55,8 +60,8 @@ class Web{
         static Attribute(element, attribute, value){
             element.setAttribute(attribute, value);
         }
-        static Attributes(element, attributes_obj){
-            for(let entry of Object.entries(attributes_obj)){
+        static Attributes(element, attribute_value_collection){
+            for(let entry of Object.entries(attribute_value_collection)){
                 element.setAttribute(entry[0], entry[1]);
             }
         }
