@@ -17,17 +17,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let setValue = ()=> {
-                    let values = Language.getValue(pages.home.content);
-                    
-                    let content = self.children[0];
-                    let content_entries = Object.entries(values.content);
-                    content.replaceChildren();
-                    
-                    for(let value of content_entries) {
-                        let parent = document.createElement(value[0]);
-                        Web.Create.Elements(parent, value[1]);
-                        content.appendChild(parent)
-                    }
+                    let values = Language.getValue(pages.home.content)
+                    let content = self.children[1];
+                    content.replaceChildren(Web.Create.Element(pages.home.name, pages.home.html, values));
                     
                     Kompacted.load(self, true, pages.home.kompacted_list)
 
@@ -42,19 +34,13 @@ window.addEventListener("DOMContentLoaded", ()=>{
 })
 
 class Page{
-    constructor(name, content, kompacted_list = [], lang=Language.default) {
+    constructor(name, html, content, kompacted_list = [], lang=Language.getDefault()) {
         this.content = Language.new();
-        let info = new Page.INFO(name, content);
-        Language.setValue(this.content, info, lang)
+        Language.setValue(this.content, content, lang)
+
+        this.name = name;
+        this.html = html;
         this.kompacted_list = kompacted_list;
-    }
-    
-    static INFO = class{
-        constructor(name, content){
-            this.name = name;
-            this.content = content;
-        }
-        
     }
 }
 
@@ -63,15 +49,15 @@ class Page{
 //////////////////////////////////
 
 const pages = {
-    home: new Page("home", {
-        ade: {
-            p1: Web.Create.HTML.Tag("p", "2-1_test_p1"),
-            img1: Web.Create.HTML.Tag("img", {src: "placeholder.png", alt: "2-1_test_img1"}),
-            p2: Web.Create.HTML.Tag("p", {innerHTML: "dje", plc: Web.Create.HTML.Tag("p", "dkao")}),
-        },
-        bad: {
-            p1: Web.Create.HTML.Tag("p", "2-2_test_p1"),
-        }
-    }, [], 
-        Language.list.FRENCH.code),
+    home: new Page("home", 
+        `
+            <p var="p1"></p>
+            <h1>test_global</h1>
+            <img var=2>
+        `,
+        {p1: "test_fr", 2: {src: PATH.IMAGES+"placeholder.png", alt: "2_test"}},
+        [],
+        Language.list.FRENCH.code )
 }
+
+Language.setValue(pages.home.content, {p1: "test_en", 2: {src: PATH.IMAGES+"servers.png", alt: "3_test"}}, Language.list.ENGLISH.code);

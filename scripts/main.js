@@ -24,34 +24,24 @@ class Web{
         }
     }
     static Create = class{
-        static Element(parent, value){
-            let element = document.createElement(value.tag);
-            switch (typeof(value.content)){
-                case typeof("u"):
-                    element.innerHTML = value.content;
-                    break;
-                case typeof({}):
-                    let properties = Object.entries(value.content)
-                    for(let property of properties){
-                        if(property[1] instanceof Web.Object.HTML.Tag){
-                            Web.Create.Element(element, property[1])
-                        } else {
-                            if (property[0] === "innerHTML") {
-                                element.innerHTML = property[1];
-                            } else {
-                                if (value.tag === "img" && property[0] === "src") element.setAttribute(property[0], PATH.IMAGES + property[1]);
-                                else element.setAttribute(property[0], property[1]);
-                            }
-                        }
+        static Element(name, html, vars={}, vars_attr = "var"){
+            let element = document.createElement(name);
+            element.innerHTML = html;
+            for(let v in vars){
+                for(let el of element.getElementsByAttribute(vars_attr, v)){
+                    if(typeof(vars[v])===typeof({})){
+                        Web.Set.Attributes(el, vars[v])
+                    } else {
+                        el.innerHTML = vars[v];
                     }
-                    break;
+                    el.removeAttribute(vars_attr);
+                }
             }
-            parent.appendChild(element);
+            return element;
         }
-        static Elements(parent, values){
+        static Elements(parent, name, html, vars={}, vars_attr = "var"){
             for (let value of Object.values(values)){
-                console.log(value)
-                Web.Create.Element(parent, value);
+                parent.append(Web.Create.Element(name, html, vars, vars_attr));
             }
         }
         
@@ -61,7 +51,16 @@ class Web{
             }
         }
     }
-    
+    static Set = class{
+        static Attribute(element, attribute, value){
+            element.setAttribute(attribute, value);
+        }
+        static Attributes(element, attributes_obj){
+            for(let entry of Object.entries(attributes_obj)){
+                element.setAttribute(entry[0], entry[1]);
+            }
+        }
+    }
     static Object = class{
         static HTML = class{
             static Tag = class{
@@ -72,4 +71,13 @@ class Web{
             }
         }
     }
+}
+
+HTMLElement.prototype.getElementsByAttribute = function(attr, value=null){
+    let element_list = [];
+    for(let child of this.children){
+        if(child.hasAttribute(attr) && (child.getAttribute(attr) === value || value === null)) element_list.push(child)
+        if(child.childElementCount>0) element_list.concat(child.getElementsByAttribute(attr, value));
+    }
+    return element_list;
 }
