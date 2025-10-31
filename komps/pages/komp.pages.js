@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
     let pages_scope = document.body;
 
     pages_KOMPACTED.new((kmptd)=>{
-        kmptd.add("home",
+        kmptd.add("home_page",
             `
             <p var="welcome">welcome_msg</p>
             <img var="img_mountain">
@@ -14,12 +14,32 @@ window.addEventListener("DOMContentLoaded", ()=>{
                 let html = self.innerHTML;
                 let setValue = ()=> {
                     let values = Language.getValue(pages.home.content, Language.getCurrent())
-                    
-                    let el = Web.Create.Element(pages.home.name, html, values);
-                    self.innerHTML = el.innerHTML;
-                    
-                    Kompacted.load(self, true, pages.home.kompacted_list)
 
+                    let el = Web.Create.Element(pages.home.name, html, values);
+                    self.replaceChildren(el);
+
+                    Kompacted.load(self, true, [])
+                }
+                setValue();
+                Language.onUpdate(setValue);
+
+            }
+        );
+        
+        kmptd.add("projects_page",
+            `
+            <p var="title">project_title</p>
+            <foreach src="projects" as="project"></foreach>
+            `,
+            "load", (self)=>{
+                let html = self.innerHTML;
+                let setValue = ()=> {
+                    let values = Language.getValue(pages.projects.content, Language.getCurrent())
+                    
+                    let el = Web.Create.Element(pages.projects.name, html, values);
+                    self.replaceChildren(el);
+
+                    Kompacted.load(self, true, [Kompacted.getKompacted("project")])
                 }
                 setValue();
                 Language.onUpdate(setValue);
@@ -31,12 +51,11 @@ window.addEventListener("DOMContentLoaded", ()=>{
 })
 
 class Page{
-    constructor(name, content, kompacted_list = [], lang=Language.getDefault()) {
+    constructor(name, content, lang=Language.getDefault()) {
         this.content = Language.new();
         Language.setValue(this.content, content, lang)
 
         this.name = name;
-        this.kompacted_list = kompacted_list;
     }
 }
 
@@ -49,14 +68,23 @@ const pages = {
         {
             welcome: "Bienvenue",
             img_mountain: {src: PATH.IMAGES+"mountains.png", alt: "montagnes hivernale"},
-            get_started: "Démarrer",
+            get_started: {innerHTML: "Démarrer", event: {type: "click", func: ()=>{Web.Move.goto("projects_page")}}},
         },
-        [],
-        Language.list.FRENCH.code )
+        Language.list.FRENCH.code),
+    
+    projects: new Page("projects",
+        {
+            title: "Projets"
+        },
+        Language.list.FRENCH.code)
 }
 
 Language.setValue(pages.home.content, {
     welcome: "Welcome",
     img_mountain: {src: PATH.IMAGES+"mountains.png", alt: "snowy mountains"},
-    get_started: "Get Started",
+    get_started: {innerHTML: "Get Started", event: Language.getValue(pages.home.content).get_started.event},
 }, Language.list.ENGLISH.code);
+
+Language.setValue(pages.projects.content,  {
+        title: "Projects"
+    },  Language.list.ENGLISH.code)

@@ -39,11 +39,11 @@ class nav {
 //////////////////////////////////
 
 const nav_pages = [
-    new nav("projets", Language.list.FRENCH.code, "project"),
-    new nav("cv", Language.list.FRENCH.code, "cv"),
-    new nav("accueil", Language.list.FRENCH.code, "home"),
-    new nav("education", Language.list.FRENCH.code, "edu"),
-    new nav("socials", Language.list.FRENCH.code, "socials")
+    new nav("projets", Language.list.FRENCH.code, "projects_page"),
+    new nav("cv", Language.list.FRENCH.code, "cv_page"),
+    new nav("accueil", Language.list.FRENCH.code, "home_page"),
+    new nav("education", Language.list.FRENCH.code, "education_page"),
+    new nav("socials", Language.list.FRENCH.code, "socials_page")
 ]
 
 Language.setValue(nav_pages[0].content, "projects", Language.list.ENGLISH.code);

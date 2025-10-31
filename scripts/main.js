@@ -9,7 +9,7 @@ class Web{
     static Move = class{
         static goto(endpoint, optional_data={}) {
             let komp = document.createElement("kompact");
-            komp.setAttribute(Kompacted.DefaultValues.KOMPACT_NAME_ATTRIBUTE, endpoint);
+            komp.setAttribute(Kompacted.DefaultValues.KOMPACT_AS_KOMP_ATTRIBUTE, endpoint);
 
             if(!isNull(optional_data)){
                 let data = Object.entries(optional_data)
@@ -32,7 +32,6 @@ class Web{
                     if(typeof(vars[v])===typeof({})){
                         if(vars[v].hasOwnProperty("innerHTML")){
                             el.innerHTML = vars[v].innerHTML;
-                            delete vars[v].innerHTML;
                         }
                         Web.Set.Attributes(el, vars[v])
                     } 
@@ -42,6 +41,7 @@ class Web{
                     el.removeAttribute(vars_attr_name);
                 }
             }
+
             return element;
         }
         static Elements(parent, name, html, vars={}, vars_attr_name = "var"){
@@ -58,11 +58,18 @@ class Web{
     }
     static Set = class{
         static Attribute(element, attribute, value){
+            if(attribute==="event" && value.hasOwnProperty("func")) {
+                element.addEventListener(value.type, value.func);
+                return;
+            }
+            
+            if(attribute==="innerHTML") return;
+            
             element.setAttribute(attribute, value);
         }
         static Attributes(element, attribute_value_collection){
             for(let entry of Object.entries(attribute_value_collection)){
-                element.setAttribute(entry[0], entry[1]);
+                Web.Set.Attribute(element, entry[0], entry[1]);
             }
         }
     }
