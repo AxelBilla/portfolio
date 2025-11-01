@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
             }
         );
-        
+
         kmptd.add("projects_page",
             `
             <p var="title">project_title</p>
@@ -35,11 +35,95 @@ window.addEventListener("DOMContentLoaded", ()=>{
                 let html = self.innerHTML;
                 let setValue = ()=> {
                     let values = Language.getValue(pages.projects.content, Language.getCurrent())
-                    
+
                     let el = Web.Create.Element(pages.projects.name, html, values);
                     self.replaceChildren(el);
 
                     Kompacted.load(self, true, [Kompacted.getKompacted("project")])
+                }
+                setValue();
+                Language.onUpdate(setValue);
+
+            }
+        );
+
+        kmptd.add("socials_page",
+            `
+            <p var="title">socials_title</p>
+            <foreach src="socials" as="social"></foreach>
+            `,
+            "load", (self)=>{
+                let html = self.innerHTML;
+                let setValue = ()=> {
+                    let values = Language.getValue(pages.socials.content, Language.getCurrent())
+
+                    let el = Web.Create.Element(pages.socials.name, html, values);
+                    self.replaceChildren(el);
+
+                    Kompacted.load(self, true, [Kompacted.getKompacted("social")])
+                }
+                setValue();
+                Language.onUpdate(setValue);
+
+            }
+        );
+
+        kmptd.add("education_page",
+            `
+            <p var="title">education_title</p>
+            <foreach src="educations" as="education"></foreach>
+            `,
+            "load", (self)=>{
+                let html = self.innerHTML;
+                let setValue = ()=> {
+                    let values = Language.getValue(pages.educations.content, Language.getCurrent())
+
+                    let el = Web.Create.Element(pages.educations.name, html, values);
+                    self.replaceChildren(el);
+
+                    Kompacted.load(self, true, [Kompacted.getKompacted("education")])
+                }
+                setValue();
+                Language.onUpdate(setValue);
+
+            }
+        );
+
+        kmptd.add("feed_page",
+            `
+            <p var="title">feed_title</p>
+            <foreach src="feed" as="post"></foreach>
+            `,
+            "load", (self)=>{
+                let html = self.innerHTML;
+                let setValue = ()=> {
+                    let values = Language.getValue(pages.feed.content, Language.getCurrent())
+
+                    let el = Web.Create.Element(pages.feed.name, html, values);
+                    self.replaceChildren(el);
+
+                    Kompacted.load(self, true, [Kompacted.getKompacted("feed")])
+                }
+                setValue();
+                Language.onUpdate(setValue);
+
+            }
+        );
+
+        kmptd.add("cv_page",
+            `
+            <p var="title">cv_title</p>
+            <kompact as="cv"></kompact>
+            `,
+            "load", (self)=>{
+                let html = self.innerHTML;
+                let setValue = ()=> {
+                    let values = Language.getValue(pages.cv.content, Language.getCurrent())
+
+                    let el = Web.Create.Element(pages.cv.name, html, values);
+                    self.replaceChildren(el);
+
+                    Kompacted.load(self, true, [Kompacted.getKompacted("cv")])
                 }
                 setValue();
                 Language.onUpdate(setValue);
@@ -63,21 +147,15 @@ class Page{
 ////           DATA           ////
 //////////////////////////////////
 
-const pages = {
-    home: new Page("home",
-        {
-            welcome: "Bienvenue",
-            img_mountain: {src: PATH.IMAGES+"mountains.png", alt: "montagnes hivernale"},
-            get_started: {innerHTML: "Démarrer", event: {type: "click", func: ()=>{Web.Move.goto("projects_page")}}},
-        },
-        Language.list.FRENCH.code),
-    
-    projects: new Page("projects",
-        {
-            title: "Projets"
-        },
-        Language.list.FRENCH.code)
-}
+const pages = {};
+
+pages.home = new Page("home",
+    {
+        welcome: "Bienvenue",
+        img_mountain: {src: PATH.IMAGES+"mountains.png", alt: "montagnes hivernale"},
+        get_started: {innerHTML: "Démarrer", event: {type: "click", func: ()=>{Web.Move.goto("projects_page")}}},
+    },
+    Language.list.FRENCH.code)
 
 Language.setValue(pages.home.content, {
     welcome: "Welcome",
@@ -85,6 +163,62 @@ Language.setValue(pages.home.content, {
     get_started: {innerHTML: "Get Started", event: Language.getValue(pages.home.content).get_started.event},
 }, Language.list.ENGLISH.code);
 
+
+    
+pages.projects = new Page("projects",
+    {
+        title: "Projets"
+    },
+    Language.list.FRENCH.code),
+    
 Language.setValue(pages.projects.content,  {
-        title: "Projects"
-    },  Language.list.ENGLISH.code)
+    title: "Projects"
+},  Language.list.ENGLISH.code)
+
+
+
+pages.socials = new Page("socials",
+    {
+        title: "Réseaux"
+    },
+    Language.list.FRENCH.code)
+
+Language.setValue(pages.socials.content,  {
+    title: "Socials"
+},  Language.list.ENGLISH.code)
+
+
+
+pages.educations = new Page("education",
+    {
+        title: "Éducation"
+    },
+    Language.list.FRENCH.code)
+
+Language.setValue(pages.educations.content,  {
+    title: "Education"
+},  Language.list.ENGLISH.code)
+
+
+
+pages.feed = new Page("feed",
+    {
+        title: "Veille"
+    },
+    Language.list.FRENCH.code)
+
+Language.setValue(pages.feed.content,  {
+    title: "Feed"
+},  Language.list.ENGLISH.code)
+
+
+
+pages.cv = new Page("cv",
+    {
+        title: "Curriculum Vitae"
+    },
+    Language.list.FRENCH.code)
+
+Language.setValue(pages.cv.content,  {
+    title: "Curriculum Vitae"
+},  Language.list.ENGLISH.code)

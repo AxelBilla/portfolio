@@ -1,12 +1,12 @@
 window.addEventListener("DOMContentLoaded", ()=>{
-    const edu_KOMPACTED = new Kompacted(true, "edu");
+    const edu_KOMPACTED = new Kompacted(true, "education");
     
     let edu_scope = document.body;
 
-    edu_KOMPACTED.set("education_pages", eduPages);
+    edu_KOMPACTED.set("educations", educations);
     edu_KOMPACTED.new((kmptd)=>{
 
-        kmptd.add("education_page",
+        kmptd.add("education",
             `
             <info>
                 <p>edu_name</p>
@@ -19,8 +19,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
             "load", (self)=>{
                 let setValue = ()=>{
                     let values = Language.getValue(JSON.parse(self.Values().content));
-                    let ps = self.getElementsByTagName("p");
-                    let spns = ps[2].getElementsByTagName("span");
+                    
+                    let info = self.getElementsByTagName("info")[0];
+                    
+                    let ps = info.getElementsByTagName("p");
+                    let spns = info.getElementsByTagName("span");
+                    
                     let content = self.getElementsByTagName("content")[0];
 
                     ps[0].innerText = values.name;
@@ -31,17 +35,26 @@ window.addEventListener("DOMContentLoaded", ()=>{
                     let titles = Object.values(values.content.titles);
                     let para = Object.values(values.content.paragraphs);
                     let imgs = Object.values(values.content.images);
-
+                    
                     content.replaceChildren();
                     for(let i = 0; i<titles.length; i++){
                         let el_content = document.createElement("kompact");
-                        el_content.setAttribute("name", "education_content");
+                        el_content.setAttribute("as", "education_content");
                         el_content.setAttribute("title", titles[i]);
                         el_content.setAttribute("paragraph", para[i]);
                         el_content.setAttribute("image", imgs[i]);
                         content.appendChild(el_content);
                     }
                     kmptd.load(content, true);
+                    
+                    let default_display = content.style.display;
+                    content.style.display = "none";
+                    
+                    info.addEventListener("click", ()=>{
+                        // need animation but god enough for now
+                        if(content.style.display === "none") content.style.display = default_display;
+                        else content.style.display = "none";
+                    })
                 }
                 setValue();
                 Language.onUpdate(setValue);
@@ -96,8 +109,8 @@ class Education{
 ////           DATA           ////
 //////////////////////////////////
 
-const eduPages = [
-    new Education("BTS Systèmes Informatiques aux Entreprises Option SLAM", "Lycée Paris Turgot", 2024, 2026,
+const educations = []
+educations.push(new Education("BTS Systèmes Informatiques aux Entreprises Option SLAM", "Lycée Paris Turgot", 2024, 2026,
     {
         titles: {
             t1: "Support et mise à disposition de services informatiques",
@@ -114,30 +127,9 @@ const eduPages = [
             img2: "phishing.png",
             img3: "programming.png"
         }
-    }, Language.list.FRENCH.code),
-    new Education("Bac Pro Systèmes Numériques Option RISC", "Lycée Professionnel Jacques Prévert", 2019, 2023, {
-        titles: {
-            t1: "Appréhender la mise en oeuvre d'un projet simulé ou réel d'installation d'un système",
-            t2: "Analyser le fonctionnement de l'installation actuelle ou de l'équipement en vue de l'intervention",
-            t3: "Effectuer les tests, certifier le support physique",
-            t4: "Vérifier la conformité du fonctionnement des matériels et logiciels identifiés puis de l'installation"
-        },
-        paragraphs: {
-            p1: "Faire un bilan de l'existant et recueillir les informations relatives à l'exploitation et aux caractéristiques des matériels de l'installation.",
-            p2: "Planifier l'intervention, réaliser l'intégration matérielle ou logicielle d'un équipement, effectuer les tests nécessaires à la validation du fonctionnement des équipements, préparer le plan d'action puis établir tout ou partie du plan d'implantation et de câblage.",
-            p3: "Installer, configurer les éléments du système et vérifier la conformité du fonctionnement, établir un pré diagnostic à distance, vérifier la conformité du support et des alimentations en énergie, le fonctionnement des matériels et logiciels en interaction, analyser et interpréter les indicateurs de fonctionnement et établir un diagnostic ; réaliser l'intervention.",
-            p4: "Mettre à jour les documents relatant les historiques des interventions, communiquer lors de l'intervention, déceler et mettre en évidence les besoins du client, renseigner le rapport de recette ou le bon d'intervention, gérer ses lots de matériel, son temps d'intervention et les ressources."
-        },
-        images: {
-            img1: "report_sheets.png",
-            img2: "computer_support.png",
-            img3: "router.png",
-            img4: "filled_letter.png"
-        }
-    }, Language.list.FRENCH.code),
-]
+    }, Language.list.FRENCH.code))
 
-Language.setValue(eduPages[0].content,
+Language.setValue(educations[0].content,
     new Education.INFO(
         "BTS Systèmes Informatiques aux Entreprises Option SLAM\n[Higher BTEC Equivalent]",
         "Paris Turgot",
@@ -160,10 +152,35 @@ Language.setValue(eduPages[0].content,
             }
         }), Language.list.ENGLISH.code);
 
-Language.setValue(eduPages[1].content,
+
+
+
+
+educations.push(new  Education("Bac Pro Systèmes Numériques Option RISC", "Lycée Professionnel Jacques Prévert", 2019, 2023, {
+    titles: {
+        t1: "Appréhender la mise en oeuvre d'un projet simulé ou réel d'installation d'un système",
+        t2: "Analyser le fonctionnement de l'installation actuelle ou de l'équipement en vue de l'intervention",
+        t3: "Effectuer les tests, certifier le support physique",
+        t4: "Vérifier la conformité du fonctionnement des matériels et logiciels identifiés puis de l'installation"
+    },
+    paragraphs: {
+        p1: "Faire un bilan de l'existant et recueillir les informations relatives à l'exploitation et aux caractéristiques des matériels de l'installation.",
+        p2: "Planifier l'intervention, réaliser l'intégration matérielle ou logicielle d'un équipement, effectuer les tests nécessaires à la validation du fonctionnement des équipements, préparer le plan d'action puis établir tout ou partie du plan d'implantation et de câblage.",
+        p3: "Installer, configurer les éléments du système et vérifier la conformité du fonctionnement, établir un pré diagnostic à distance, vérifier la conformité du support et des alimentations en énergie, le fonctionnement des matériels et logiciels en interaction, analyser et interpréter les indicateurs de fonctionnement et établir un diagnostic ; réaliser l'intervention.",
+        p4: "Mettre à jour les documents relatant les historiques des interventions, communiquer lors de l'intervention, déceler et mettre en évidence les besoins du client, renseigner le rapport de recette ou le bon d'intervention, gérer ses lots de matériel, son temps d'intervention et les ressources."
+    },
+    images: {
+        img1: "report_sheets.png",
+        img2: "computer_support.png",
+        img3: "router.png",
+        img4: "filled_letter.png"
+    }
+}, Language.list.FRENCH.code))
+
+Language.setValue(educations[1].content,
     new Education.INFO(
         "Bac Pro Systèmes Numériques Option RISC\n[BTEC Equivalent]",
-        "Lycée Professionnel Jacques Prévert",
+        "Vocational High School Jacques Prévert",
         2019, 2023,
         {
             titles: {

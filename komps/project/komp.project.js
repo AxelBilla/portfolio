@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
                     }
 
                     let image = self.getElementsByTagName('img')[0];
-                    image.setAttribute('src', values.content.images.img1);
+                    image.setAttribute('src', PATH.IMAGES+values.content.images.img1);
                 }
                 setValue();
                 Language.onUpdate(setValue);
@@ -79,39 +79,23 @@ class Project{
 ////           DATA           ////
 //////////////////////////////////
 
-const projects = [
-    new Project("Lecteur en Ligne", "Octobre 2024", "https://reader.billiard.dev/", {
-        main: {
-            title: "Lecteur de bande-dessinée, comic book et autres média imagés",
-            text: "Créer à l'occasion d'un projet proposé par nos professeurs avec comme objectif l'exploitation de nos compétences HTML et CSS en développant un site sur une thématique personnelle tout en respectant les instructions données."
-        },
-        requirement: {
-            title: "Obligations",
-            text: "Redirection vers d'autres pages; Liens hypertexte vers des sites web liés au thème choisi; Utilisation de tableaux avec en-têtes de colonnes, fusion de lignes-colonnes et contenant des images; Utilisation de formulaires; Changement de feuilles de styles en un clic."
-        },
-        details: {
-            title: "Détails",
-            text: "Stack: HTML/CSS, JavaScript, JQuery."
-        },
-        images: {img1: ""}
-    }, Language.list.FRENCH.code),
-    
-    new Project("Caloric Fool", "Avril 2025", "https://calorie.billiard.dev/", {
-        main: {
-            title: "Traqueur de calories",
-            text: "Créé à l'occasion d'un projet proposé par nos professeurs avec comme objectif l'exploitation du modèle MVC en développant un site sur une thématique personnelle tout en respectant les instructions données."
-        },
-        requirement: {
-            title: "Obligations",
-            text: "Utilisation du modèle MVC; Création d'un MCD; Mise en place d'une base de données; Préparation de requêtes SQL; Présence de CRUD(s); Programmation Orientée Objets; Présence d'un Jeu d'Essai"
-        },
-        details: {
-            title: "Détails",
-            text: "Stack:\nHTML/CSS, PostgreSQL, Javascript, Node.js, Express.js, JQuery."
-        },
-        images: {img1: ""}
-    }, Language.list.FRENCH.code)
-]
+const projects = [];
+
+projects.push(new Project("Lecteur en Ligne", "Octobre 2024", "https://reader.billiard.dev/", {
+    main: {
+        title: "Lecteur de bande-dessinée, comic book et autres média imagés",
+        text: "Créer à l'occasion d'un projet proposé par nos professeurs avec comme objectif l'exploitation de nos compétences HTML et CSS en développant un site sur une thématique personnelle tout en respectant les instructions données."
+    },
+    requirement: {
+        title: "Obligations",
+        text: "Redirection vers d'autres pages; Liens hypertexte vers des sites web liés au thème choisi; Utilisation de tableaux avec en-têtes de colonnes, fusion de lignes-colonnes et contenant des images; Utilisation de formulaires; Changement de feuilles de styles en un clic."
+    },
+    details: {
+        title: "Détails",
+        text: "Stack: HTML/CSS, JavaScript, JQuery."
+    },
+    images: {img1: "webreader_sample.PNG"}
+}, Language.list.FRENCH.code))
 
 Language.setValue(projects[0].content, new Project.INFO("Web Reader", "October 2024", "https://reader.billiard.dev/", {
     main: {
@@ -126,8 +110,26 @@ Language.setValue(projects[0].content, new Project.INFO("Web Reader", "October 2
         title: "Details",
         text: "Stack: HTML/CSS, JavaScript, JQuery."
     },
-    images: {img1: ""}
+    images: Language.getValue(projects[0].content, Language.list.FRENCH.code).content.images
 }), Language.list.ENGLISH.code);
+
+
+
+projects.push(new Project("Caloric Fool", "Avril 2025", "https://calorie.billiard.dev/", {
+    main: {
+        title: "Traqueur de calories",
+        text: "Créé à l'occasion d'un projet proposé par nos professeurs avec comme objectif l'exploitation du modèle MVC en développant un site sur une thématique personnelle tout en respectant les instructions données."
+    },
+    requirement: {
+        title: "Obligations",
+        text: "Utilisation du modèle MVC; Création d'un MCD; Mise en place d'une base de données; Préparation de requêtes SQL; Présence de CRUD(s); Programmation Orientée Objets; Présence d'un Jeu d'Essai"
+    },
+    details: {
+        title: "Détails",
+        text: "Stack:\nHTML/CSS, PostgreSQL, Javascript, Node.js, Express.js, JQuery."
+    },
+    images: {img1: "caloric_sample.PNG"}
+}, Language.list.FRENCH.code))
 
 Language.setValue(projects[1].content, new Project.INFO("Caloric Fool", "April 2025", "https://calorie.billiard.dev/", {
     main: {
@@ -142,5 +144,5 @@ Language.setValue(projects[1].content, new Project.INFO("Caloric Fool", "April 2
         title: "Details",
         text: "Stack:\nHTML/CSS, PostgreSQL, Javascript, Node.js, Express.js, JQuery."
     },
-    images: {img1: ""}
+    images: Language.getValue(projects[1].content, Language.list.FRENCH.code).content.images
 }), Language.list.ENGLISH.code);
