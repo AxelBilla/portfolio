@@ -1,3 +1,5 @@
+const page_class = "pages";
+
 window.addEventListener("DOMContentLoaded", ()=>{
     const pages_KOMPACTED = new Kompacted(true, "pages");
     
@@ -28,11 +30,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("projects_page",
             `
-            <p var="title">project_title</p>
+            <h1 var="title">project_title</h1>
             <foreach src="projects" as="project"></foreach>
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
+                self.classList.add(page_class);
                 let setValue = ()=> {
                     let values = Language.getValue(pages.projects.content, Language.getCurrent())
 
@@ -49,11 +52,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("socials_page",
             `
-            <p var="title">socials_title</p>
+            <h1 var="title">socials_title</h1>
             <foreach src="socials" as="social"></foreach>
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
+                self.classList.add(page_class);
                 let setValue = ()=> {
                     let values = Language.getValue(pages.socials.content, Language.getCurrent())
 
@@ -70,11 +74,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("education_page",
             `
-            <p var="title">education_title</p>
+            <h1 var="title">education_title</h1>
             <foreach src="educations" as="education"></foreach>
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
+                self.classList.add(page_class);
                 let setValue = ()=> {
                     let values = Language.getValue(pages.educations.content, Language.getCurrent())
 
@@ -91,11 +96,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("feed_page",
             `
-            <p var="title">feed_title</p>
+            <h1 var="title">feed_title</h1>
             <foreach src="feed" as="post"></foreach>
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
+                self.classList.add(page_class);
                 let setValue = ()=> {
                     let values = Language.getValue(pages.feed.content, Language.getCurrent())
 
@@ -112,11 +118,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("cv_page",
             `
-            <p var="title">cv_title</p>
+            <h1 var="title">cv_title</h1>
             <kompact as="cv"></kompact>
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
+                self.classList.add(page_class);
                 let setValue = ()=> {
                     let values = Language.getValue(pages.cv.content, Language.getCurrent())
 
