@@ -17,7 +17,7 @@ class Web{
     
     static Move = class{
         static To = class {
-            static endpoint(endpoint, optional_data={}) {
+            static Enpoint(endpoint, optional_data={}) {
                 let komp = document.createElement("kompact");
                 komp.setAttribute(Kompacted.DefaultValues.KOMPACT_AS_KOMP_ATTRIBUTE, endpoint);
 
@@ -33,8 +33,8 @@ class Web{
                 Kompacted.getKompacted('pages').load(main, true);
             }
             
-            static element(id, scroll_type = "smooth"){
-                document.getElementById(id).scrollIntoView({behavior: scroll_type});
+            static Element(element, scroll_type = "smooth"){
+                element.scrollIntoView({behavior: scroll_type});
             }
         }
     }
@@ -103,7 +103,6 @@ class Web{
 HTMLElement.prototype.getElementsByAttribute = function(attr, value=null){
     let element_list = [];
     for(let child of this.children){
-        console.log(child)
         if(child.hasAttribute(attr) && (child.getAttribute(attr) === value || value === null)) element_list.push(child)
         if(child.childElementCount>0) {
             element_list = element_list.concat(child.getElementsByAttribute(attr, value));

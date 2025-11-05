@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
                 Language.onUpdate(setValue);
                 
                 self.addEventListener("click", ()=>{
-                    Web.Move.To.endpoint(nav_data.endpoint);
+                    Web.Move.To.Enpoint(nav_data.Enpoint);
                 })
             }
         )

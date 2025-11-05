@@ -23,7 +23,7 @@ home_page{
         > button{
             width: 20vw;
             min-height: 8vh;
-            max-height: 10vh;
+            max-height: 20vh;
             
             font-size: 2vw;
             font-family: "Qaz";
@@ -38,7 +38,7 @@ home_page{
             padding-top: 10vw;
             > button{
                 width: 50vw;
-                height: 6vh;
+                min-height: 6vh;
 
                 font-size: 2vw;
                 font-family: "Qaz";
