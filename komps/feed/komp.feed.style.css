@@ -1,13 +1,17 @@
 post{
+    display: block;
+    background-color: cadetblue;
     titles{
-        
-    },
+        background-color: blanchedalmond;
+    };
     content{
+        background-color: crimson;
         p{
-            
-        },
+            background-color: darkkhaki;
+        };
         img {
 
-        },
+            background-color: darkkhaki;
+        };
     },
 }

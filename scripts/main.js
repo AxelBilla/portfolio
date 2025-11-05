@@ -16,20 +16,26 @@ class CSS{
 class Web{
     
     static Move = class{
-        static goto(endpoint, optional_data={}) {
-            let komp = document.createElement("kompact");
-            komp.setAttribute(Kompacted.DefaultValues.KOMPACT_AS_KOMP_ATTRIBUTE, endpoint);
+        static To = class {
+            static endpoint(endpoint, optional_data={}) {
+                let komp = document.createElement("kompact");
+                komp.setAttribute(Kompacted.DefaultValues.KOMPACT_AS_KOMP_ATTRIBUTE, endpoint);
 
-            if(!isNull(optional_data)){
-                let data = Object.entries(optional_data)
-                for(let entry of data){
-                    komp.setAttribute(entry[0], entry[1]);
+                if(!isNull(optional_data)){
+                    let data = Object.entries(optional_data)
+                    for(let entry of data){
+                        komp.setAttribute(entry[0], entry[1]);
+                    }
                 }
-            }
 
-            let main = document.body.children[1];
-            main.replaceChildren(komp);
-            Kompacted.getKompacted('pages').load(main, true);
+                let main = document.body.children[1];
+                main.replaceChildren(komp);
+                Kompacted.getKompacted('pages').load(main, true);
+            }
+            
+            static element(id, scroll_type = "smooth"){
+                document.getElementById(id).scrollIntoView({behavior: scroll_type});
+            }
         }
     }
     static Create = class{
@@ -97,8 +103,11 @@ class Web{
 HTMLElement.prototype.getElementsByAttribute = function(attr, value=null){
     let element_list = [];
     for(let child of this.children){
+        console.log(child)
         if(child.hasAttribute(attr) && (child.getAttribute(attr) === value || value === null)) element_list.push(child)
-        if(child.childElementCount>0) element_list.concat(child.getElementsByAttribute(attr, value));
+        if(child.childElementCount>0) {
+            element_list = element_list.concat(child.getElementsByAttribute(attr, value));
+        }
     }
     return element_list;
 }

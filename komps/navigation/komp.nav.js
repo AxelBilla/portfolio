@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
                 Language.onUpdate(setValue);
                 
                 self.addEventListener("click", ()=>{
-                    Web.Move.goto(nav_data.endpoint);
+                    Web.Move.To.endpoint(nav_data.endpoint);
                 })
             }
         )
@@ -44,10 +44,11 @@ const nav_pages = [
     new nav("projets", Language.list.FRENCH.code, "projects_page"),
     new nav("cv", Language.list.FRENCH.code, "cv_page"),
     new nav("accueil", Language.list.FRENCH.code, "home_page"),
-    new nav("veille", Language.list.FRENCH.code, "feed_page"),
-    new nav("education", Language.list.FRENCH.code, "education_page")
+    new nav("éducation", Language.list.FRENCH.code, "education_page"),
+    new nav("réseaux", Language.list.FRENCH.code, "socials_page"),
 ]
 
 Language.setValue(nav_pages[0].content, "projects", Language.list.ENGLISH.code);
 Language.setValue(nav_pages[2].content, "home", Language.list.ENGLISH.code);
-Language.setValue(nav_pages[3].content, "feed", Language.list.ENGLISH.code);
+Language.setValue(nav_pages[3].content, "education", Language.list.ENGLISH.code);
+Language.setValue(nav_pages[4].content, "socials", Language.list.ENGLISH.code);

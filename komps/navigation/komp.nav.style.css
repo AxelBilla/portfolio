@@ -14,7 +14,10 @@ nav{
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     
-    nav_icon{
+    > :hover{
+        transform: translateY(5px);
+    };
+    > nav_icon{
         display: flex;
         justify-content: center;
         background-color: red;
@@ -23,8 +26,7 @@ nav{
         min-height: 3.7vw;
         
         border-radius: 7px;
-        
-        p{
+        > p{
             align-content: center;
             
             margin: 5px;

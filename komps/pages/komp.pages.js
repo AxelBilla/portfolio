@@ -8,8 +8,14 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `
             <p var="welcome">welcome_msg</p>
             <img var="img_mountain">
-            <br>
             <button var="get_started">get_started_text</button>
+            
+            <content id="home_content">
+                <button var="to_feed">to_feed_text</button>
+                <home_feed>
+                    <foreach src="feed" as="post"></foreach>
+                </home_feed>
+            </content>
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
@@ -19,7 +25,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
                     let el = Web.Create.Element(pages.home.name, html, values);
                     self.replaceChildren(el);
 
-                    Kompacted.load(self, true, [])
+                    if(Kompacted.hasKompacted("feed")) Kompacted.load(self, true, [Kompacted.getKompacted("feed")])
                 }
                 setValue();
                 Language.onUpdate(setValue);
@@ -159,7 +165,8 @@ pages.home = new Page("home",
     {
         welcome: "Bienvenue",
         img_mountain: {src: PATH.IMAGES+"placeholder.png", alt: "montagnes hivernale"},
-        get_started: {innerHTML: "Démarrer", event: {type: "click", func: ()=>{Web.Move.goto("projects_page")}}},
+        get_started: {innerHTML: "Démarrer", event: {type: "click", func: ()=>{Web.Move.To.element("home_content")}}},
+        to_feed: {innerHTML: "Veille", event: {type: "click", func: ()=>{Web.Move.To.endpoint("feed_page")}}},
     },
     Language.list.FRENCH.code)
 
@@ -167,6 +174,7 @@ Language.setValue(pages.home.content, {
     welcome: "Welcome",
     img_mountain: Language.getValue(pages.home.content).img_mountain,
     get_started: {innerHTML: "Get Started", event: Language.getValue(pages.home.content).get_started.event},
+    to_feed: {innerHTML: "Feed", event: Language.getValue(pages.home.content).to_feed.event},
 }, Language.list.ENGLISH.code);
 
 

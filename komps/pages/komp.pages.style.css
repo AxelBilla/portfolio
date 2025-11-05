@@ -2,26 +2,59 @@ home_page{
     display: flex;
     justify-content: center;
     background-color: cadetblue;
-    home{
+    > home{
         display: flex;
         flex-direction: column;
         align-items: center;
+
+
+        width: 100%;
+        padding-bottom: 1vw;
+        
         background-color: red;
-        p{
+        > p{
             font-family: "Qaz";
             font-size: 5vw;
             margin: 5px;
         };
-        img{
+        > img{
             width: 30vw;
         };
-        button{
+        > button{
             width: 20vw;
-            height: 10vh;
+            min-height: 8vh;
+            max-height: 10vh;
+            
             font-size: 2vw;
-            margin: 5px;
             font-family: "Qaz";
+
+            padding: 5px;
+            margin-top: 3vh;
         };
+        > content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10vw;
+            > button{
+                width: 50vw;
+                height: 6vh;
+
+                font-size: 2vw;
+                font-family: "Qaz";
+
+                margin: 5px;
+            };
+            > home_feed {
+                display: block;
+                background-color: aqua;
+                
+                width: 70vw;
+                max-height: 80vh;
+                
+                overflow: scroll;
+            };
+        }
     };
 }
 

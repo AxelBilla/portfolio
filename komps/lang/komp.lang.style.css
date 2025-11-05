@@ -1,11 +1,14 @@
 lang {
     position: fixed;
     bottom: -1.5vw;
-    right: -28vh;
+    right: 0.5vh;
     
-    lang_icon {
-        img {
-            width: 30%;
+    > lang_icon {
+        :hover{
+            transform: translateY(-5px);
+        };
+        > img {
+            width: 10vw;
         },
     },
 }
