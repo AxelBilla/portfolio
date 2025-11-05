@@ -166,7 +166,7 @@ pages.home = new Page("home",
         welcome: "Bienvenue",
         img_mountain: {src: PATH.IMAGES+"placeholder.png", alt: "montagnes hivernale"},
         get_started: {innerHTML: "Démarrer", event: {type: "click", func: ()=>{Web.Move.To.Element(document.getElementById("home_content"))}}},
-        to_feed: {innerHTML: "Veille", event: {type: "click", func: ()=>{Web.Move.To.Enpoint("feed_page")}}},
+        to_feed: {innerHTML: "Veille", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("feed_page")}}},
     },
     Language.list.FRENCH.code)
 

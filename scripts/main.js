@@ -17,7 +17,7 @@ class Web{
     
     static Move = class{
         static To = class {
-            static Enpoint(endpoint, optional_data={}) {
+            static Endpoint(endpoint, optional_data={}) {
                 let komp = document.createElement("kompact");
                 komp.setAttribute(Kompacted.DefaultValues.KOMPACT_AS_KOMP_ATTRIBUTE, endpoint);
 
