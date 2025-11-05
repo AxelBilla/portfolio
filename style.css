@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Qaz';
+    src: url('./assets/fonts/qaz.ttf');
+}
+@font-face {
+    font-family: 'Iconic-Bold';
+    src: url('./assets/fonts/iconic-b.ttf');
+}
+@font-face {
+    font-family: 'Iconic';
+    src: url('./assets/fonts/iconic.ttf');
+}
+@font-face {
+    font-family: 'Hoves';
+    src: url('./assets/fonts/tt-hoves.ttf');
+}
+
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body > main {
+    margin-top: 8vw;
+}
+
+.buttons{
+    cursor: pointer;
+    webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}

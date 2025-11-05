@@ -1,5 +1,3 @@
-const page_class = "pages";
-
 window.addEventListener("DOMContentLoaded", ()=>{
     const pages_KOMPACTED = new Kompacted(true, "pages");
     
@@ -10,6 +8,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `
             <p var="welcome">welcome_msg</p>
             <img var="img_mountain">
+            <br>
             <button var="get_started">get_started_text</button>
             `,
             "load", (self)=>{
@@ -35,7 +34,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
-                self.classList.add(page_class);
+                self.classList.add(CSS.Class.list.pages.name);
                 let setValue = ()=> {
                     let values = Language.getValue(pages.projects.content, Language.getCurrent())
 
@@ -57,7 +56,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
-                self.classList.add(page_class);
+                self.classList.add(CSS.Class.list.pages.name);
                 let setValue = ()=> {
                     let values = Language.getValue(pages.socials.content, Language.getCurrent())
 
@@ -79,7 +78,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
-                self.classList.add(page_class);
+                self.classList.add(CSS.Class.list.pages.name);
                 let setValue = ()=> {
                     let values = Language.getValue(pages.educations.content, Language.getCurrent())
 
@@ -101,7 +100,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
-                self.classList.add(page_class);
+                self.classList.add(CSS.Class.list.pages.name);
                 let setValue = ()=> {
                     let values = Language.getValue(pages.feed.content, Language.getCurrent())
 
@@ -123,7 +122,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
-                self.classList.add(page_class);
+                self.classList.add(CSS.Class.list.pages.name);
                 let setValue = ()=> {
                     let values = Language.getValue(pages.cv.content, Language.getCurrent())
 
@@ -159,14 +158,14 @@ const pages = {};
 pages.home = new Page("home",
     {
         welcome: "Bienvenue",
-        img_mountain: {src: PATH.IMAGES+"mountains.png", alt: "montagnes hivernale"},
+        img_mountain: {src: PATH.IMAGES+"placeholder.png", alt: "montagnes hivernale"},
         get_started: {innerHTML: "Démarrer", event: {type: "click", func: ()=>{Web.Move.goto("projects_page")}}},
     },
     Language.list.FRENCH.code)
 
 Language.setValue(pages.home.content, {
     welcome: "Welcome",
-    img_mountain: {src: PATH.IMAGES+"mountains.png", alt: "snowy mountains"},
+    img_mountain: Language.getValue(pages.home.content).img_mountain,
     get_started: {innerHTML: "Get Started", event: Language.getValue(pages.home.content).get_started.event},
 }, Language.list.ENGLISH.code);
 

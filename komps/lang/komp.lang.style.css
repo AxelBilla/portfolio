@@ -1,5 +1,11 @@
-lang_icon{
-    img{
-        
+lang {
+    position: fixed;
+    bottom: -1.5vw;
+    right: -28vh;
+    
+    lang_icon {
+        img {
+            width: 30%;
+        },
     },
 }

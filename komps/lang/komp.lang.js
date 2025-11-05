@@ -11,6 +11,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let values = self.Values();
+                self.classList.add(CSS.Class.list.buttons.name)
                 
                 let image = self.getElementsByTagName('img')[0];
                 image.setAttribute('src', PATH.IMAGES+values.icon);

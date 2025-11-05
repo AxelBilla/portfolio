@@ -4,6 +4,15 @@ class PATH{
     static FONTS = PATH.ASSETS+"fonts/";
     static IMAGES = PATH.ASSETS+"images/";
 }
+
+class CSS{
+    static Class = class{
+        static list = {
+            buttons: {name: "buttons"},
+            pages : {name: "pages"},
+        }
+    }
+}
 class Web{
     
     static Move = class{

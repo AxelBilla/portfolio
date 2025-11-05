@@ -10,8 +10,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
             `,
             "load", (self)=>{
                 let nav_data = self.Values();
+                self.classList.add(CSS.Class.list.buttons.name);
                 let setValue = ()=>{
-                    self.getElementsByTagName("p")[0].innerText = Language.getValue(JSON.parse(nav_data.content));
+                    let text = Language.getValue(JSON.parse(nav_data.content)).toUpperCase();
+                    self.getElementsByTagName("p")[0].innerText = text;
                 }
                 setValue();
                 Language.onUpdate(setValue);
@@ -43,8 +45,7 @@ const nav_pages = [
     new nav("cv", Language.list.FRENCH.code, "cv_page"),
     new nav("accueil", Language.list.FRENCH.code, "home_page"),
     new nav("veille", Language.list.FRENCH.code, "feed_page"),
-    new nav("education", Language.list.FRENCH.code, "education_page"),
-    new nav("socials", Language.list.FRENCH.code, "socials_page")
+    new nav("education", Language.list.FRENCH.code, "education_page")
 ]
 
 Language.setValue(nav_pages[0].content, "projects", Language.list.ENGLISH.code);

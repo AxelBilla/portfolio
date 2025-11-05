@@ -1,13 +1,28 @@
 home_page{
-    p{
-        
-    },
-    img{
-    
-    },
-    button{
-    
-    },
+    display: flex;
+    justify-content: center;
+    background-color: cadetblue;
+    home{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: red;
+        p{
+            font-family: "Qaz";
+            font-size: 5vw;
+            margin: 5px;
+        };
+        img{
+            width: 30vw;
+        };
+        button{
+            width: 20vw;
+            height: 10vh;
+            font-size: 2vw;
+            margin: 5px;
+            font-family: "Qaz";
+        };
+    };
 }
 
 .pages > :first-child > h1{
