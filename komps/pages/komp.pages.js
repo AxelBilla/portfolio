@@ -25,7 +25,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
                     let el = Web.Create.Element(pages.home.name, html, values);
                     self.replaceChildren(el);
 
-                    if(Kompacted.hasKompacted("feed")) Kompacted.load(self, true, [Kompacted.getKompacted("feed")])
+                    // Takes a while for the feed to fill itself, so gotta timeout for a bit
+                    setTimeout(()=>{
+                        if(Kompacted.hasKompacted("feed")) Kompacted.load(self, true, [Kompacted.getKompacted("feed")])
+                    }, 500)
                 }
                 setValue();
                 Language.onUpdate(setValue);

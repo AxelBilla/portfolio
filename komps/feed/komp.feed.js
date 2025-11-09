@@ -1,9 +1,8 @@
-window.addEventListener("DOMContentLoaded", ()=>{
+window.addEventListener("DOMContentLoaded", async()=>{
     const feed_KOMPACTED = new Kompacted(true,"feed");
     
     const feed_scope = document.body;
-
-    feed_KOMPACTED.set("feed", posts)
+    feed_KOMPACTED.set("feed", await Request.All.Get.Posts());
     feed_KOMPACTED.new((kmptd)=>{
         kmptd.add("post",
             `
@@ -31,7 +30,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             }
         );
         
-    }, feed_scope, true)
+    })
 })
 
 class Post{
@@ -56,18 +55,57 @@ class Post{
 ////           DATA           ////
 //////////////////////////////////
 
-const posts = [
-    new Post("test_1", `
-            <p var="p1"></p>
-        `,
-        {p1: "1-1_test_p1"},
-        ["test", "1"],
-        Language.list.FRENCH.code),
-    new Post("test_2", `
-            <p var="p1"></p>
-            <img var="img1">
-        `,
-        {p1: "2-1_test_p1", img1: {src: PATH.IMAGES+"placeholder.png", alt: "test_2-1_img"}},
-        ["test", "1"],
-        Language.list.FRENCH.code),
-]
+class Request{
+    static Reddit = class{
+        static Fetch = class{
+            static async Posts(limit){
+                const request_reddit_feed = await fetch("http://54.37.69.170:9950/reddit/posts", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json"},
+                    body: JSON.stringify({limit: limit}),
+                })
+                return await request_reddit_feed.json();
+            }
+        }
+        static Get = class{
+            static async Posts(limit){
+                let reddit_posts = await Request.Reddit.Fetch.Posts(limit);
+                let res_posts = [];
+                for (let post of reddit_posts) {
+                    res_posts.push(
+                        new Post(post.id, `
+                            <author var="author"></author>
+                            <date var="date"></date>
+                            <h1 var="title"></h1>
+                            <embed var="img">
+                            <address var="url"></address>
+                            <p var="content"></p>
+                            <origin var="origin">
+                        `, {
+                                author: post.author,
+                                date: post.date,
+                                title: post.title,
+                                content: post.content,
+                                origin: post.origin,
+                                img: {src: (post.is_media ? post.url : ""), alt: ""},
+                                url: post.url
+                            },
+                            [post.flair],
+                            Language.list.FRENCH.code)
+                    );
+                }
+                return res_posts;
+            }
+        }
+    }
+    static All = class{
+        static Get = class{
+            static async Posts(){
+                let posts = [];
+                posts = posts.concat(await Request.Reddit.Get.Posts(250));
+                return posts;
+            }
+        }
+    }
+}
+
