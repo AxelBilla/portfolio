@@ -61,7 +61,7 @@ home_page{
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 20vw;
+            padding-top: 90vh;
             > button:hover{
                 transform: translateY(-5px);
             };
@@ -91,7 +91,7 @@ home_page{
                 border-radius: 20px;
             };
             > home_feed {
-                margin-top: 1vw;
+                margin-top: 1vh;
                 display: flex;
                 flex-direction: column;
                 align-items: center;

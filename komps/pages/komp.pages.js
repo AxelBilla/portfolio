@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
                     // Takes a while for the feed to fill itself, so gotta timeout for a bit
                     setTimeout(()=>{
                         if(Kompacted.hasKompacted("feed")) Kompacted.load(self, true, [Kompacted.getKompacted("feed")])
-                    }, 500)
+                    }, 1500)
                 }
                 setValue();
                 Language.onUpdate(setValue);
