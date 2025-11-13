@@ -1,17 +1,52 @@
+feed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 post{
     display: block;
     background-color: cadetblue;
+    width: 95%;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    background: #2a9b92;
+    background: linear-gradient(145deg,rgb(59, 211, 198) 0%, rgb(231, 90, 224) 50%, rgb(245, 66, 132) 100%);
+    background-size: 200% 200%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    border-color: rgba(255, 245, 227, 0.42);
+    border-style: solid;
+    border-width: 3px;
     titles{
-        background-color: blanchedalmond;
+        font-family: "Hoves";
     };
     content{
-        background-color: crimson;
-        p{
-            background-color: darkkhaki;
-        };
-        img {
+        display: flex;
+        flex-direction: column;
+        detail{
+            font-size: 1vw;
+            author{
 
-            background-color: darkkhaki;
+                margin-right: 0.6vw;
+            }
+        }
+        h1{
+            margin:0;
+            margin-bottom: 0.8vw;
+            font-size: 2.5vw;
+        }
+        a{
+
+            font-size: 1.5vw;
+        }
+        p{
+            font-size: 1.5vw;
+            font-family: "Hoves";
+        };
+        embed {
+            width: 80%;
         };
     },
 }

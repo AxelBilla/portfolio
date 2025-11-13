@@ -6,7 +6,7 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     
-    background-color: black;
+    background: linear-gradient(271deg, #163f90, #6d2aa3, #9f3079);
     
     width: 100%;
     min-height: 6vw;
@@ -20,20 +20,35 @@ nav{
     > nav_icon{
         display: flex;
         justify-content: center;
-        background-color: red;
         
         width: 15%;
         min-height: 3.7vw;
         
         border-radius: 7px;
-        > p{
-            align-content: center;
-            
-            margin: 5px;
+        
+        p{
             font-size: 2vw;
-            font-family: "Qaz";
-            
+            font-family: "Hoves";
+            background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            align-content: center;
+            margin: 5px;
             overflow: hidden;
-        },
+        }
+
+        background: #2a9b92;
+        background: linear-gradient(145deg,rgb(59, 211, 198) 0%, rgb(231, 90, 224) 50%, rgb(245, 66, 132) 100%);
+        background-size: 200% 200%;
+        animation: GradientAnimation 20s ease infinite;
+
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+        border-color: rgba(255, 245, 227, 0.42);
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 20px;
+
     },
 }

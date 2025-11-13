@@ -59,7 +59,7 @@ class Request{
     static Reddit = class{
         static Fetch = class{
             static async Posts(limit){
-                const request_reddit_feed = await fetch("http://54.37.69.170:9950/reddit/posts", {
+                const request_reddit_feed = await fetch("http://54.37.69.170:9950/reddit/posts/vetted", {
                     method: "POST",
                     headers: { "Content-Type": "application/json"},
                     body: JSON.stringify({limit: limit}),
@@ -74,21 +74,23 @@ class Request{
                 for (let post of reddit_posts) {
                     res_posts.push(
                         new Post(post.id, `
-                            <author var="author"></author>
-                            <date var="date"></date>
+                            <detail>
+                                <author var="author"></author>
+                                <date var="date"></date>
+                            </detail>
                             <h1 var="title"></h1>
                             <embed var="img">
-                            <address var="url"></address>
+                            <a var="url"></a>
                             <p var="content"></p>
                             <origin var="origin">
                         `, {
                                 author: post.author,
-                                date: post.date,
+                                date: new Date(post.date).toLocaleString(),
                                 title: post.title,
                                 content: post.content,
                                 origin: post.origin,
                                 img: {src: (post.is_media ? post.url : ""), alt: ""},
-                                url: post.url
+                                url: {href: post.url, innerHTML: post.url}
                             },
                             [post.flair],
                             Language.list.FRENCH.code)

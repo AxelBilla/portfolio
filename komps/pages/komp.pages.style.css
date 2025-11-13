@@ -1,7 +1,6 @@
 home_page{
     display: flex;
     justify-content: center;
-    background-color: cadetblue;
     > home{
         display: flex;
         flex-direction: column;
@@ -9,45 +8,93 @@ home_page{
 
 
         width: 100%;
-        padding-bottom: 1vw;
+        padding-bottom: 5vw;
         
-        background-color: red;
         > p{
-            font-family: "Qaz";
-            font-size: 5vw;
+            font-family: "Hoves";
+            font-size: 15vw;
             margin: 5px;
+            margin-top: 12vw;
+            background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb   );
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         };
         > img{
-            width: 30vw;
+            margin-top: 5vw;
+            width: 25vw;
         };
-        > button{
+        > button:hover{
+            transform: translateY(-5px);
+        };
+        > button {
             width: 20vw;
             min-height: 8vh;
             max-height: 20vh;
-            
-            font-size: 2vw;
-            font-family: "Qaz";
+
 
             padding: 5px;
             margin-top: 3vh;
+
+
+            buttonText{
+                font-size: 2vw;
+                font-family: "Hoves";
+                background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+            background: #2a9b92;
+            background: linear-gradient(145deg,rgb(59, 211, 198) 0%, rgb(231, 90, 224) 50%, rgb(245, 66, 132) 100%);
+            background-size: 200% 200%;
+            animation: GradientAnimation 20s ease infinite;
+
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+            border-color: rgba(255, 245, 227, 0.42);
+            border-style: solid;
+            border-width: 3px;
+            border-radius: 20px;
+
         };
         > content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 10vw;
+            padding-top: 20vw;
+            > button:hover{
+                transform: translateY(-5px);
+            };
             > button{
                 width: 50vw;
                 min-height: 6vh;
 
-                font-size: 2vw;
-                font-family: "Qaz";
-
+                buttonText{
+                    font-size: 2vw;
+                    font-family: "Hoves";
+                    background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                
+                background: #2a9b92;
+                background: linear-gradient(145deg,rgb(59, 211, 198) 0%, rgb(231, 90, 224) 50%, rgb(245, 66, 132) 100%);
+                background-size: 200% 200%;
+                animation: GradientAnimation 20s ease infinite;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+                
                 margin: 5px;
+                
+                border-color: rgba(255, 245, 227, 0.42);
+                border-style: solid;
+                border-width: 3px;
+                border-radius: 20px;
             };
             > home_feed {
-                display: block;
-                background-color: aqua;
+                margin-top: 1vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 
                 width: 70vw;
                 max-height: 80vh;
@@ -59,5 +106,26 @@ home_page{
 }
 
 .pages > :first-child > h1{
+    font-size: 2vw;
+    font-family: "Hoves";
+    color: aliceblue;
     
+    text-align: center;
+    align-content: center;
+    background: #2a9b92;
+    background: linear-gradient(145deg,rgb(59, 211, 198) 0%, rgb(231, 90, 224) 50%, rgb(245, 66, 132) 100%);
+    background-size: 200% 200%;
+    animation: GradientAnimation 20s ease infinite;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    width: 90%;
+    
+    border-color: rgba(255, 245, 227, 0.42);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 20px;
+    margin: 5px;
+
+    margin: 2%;
+
 }

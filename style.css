@@ -15,11 +15,21 @@
     src: url('./assets/fonts/tt-hoves.ttf');
 }
 
+html {
+    height: 100%;
+}
+
 body {
     position: absolute;
     height: 100%;
     width: 100%;
     margin: 0;
+    
+    background: #a6a6ff;
+    background: linear-gradient(270deg, #2152b6, #9143d1, #cf3a9b);
+    background-size: 600% 600%;
+    animation: GradientAnimation 20s ease infinite;
+
 }
 
 body > main {
@@ -28,10 +38,11 @@ body > main {
 
 .buttons{
     cursor: pointer;
-    webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
+}
+
+@keyframes GradientAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }

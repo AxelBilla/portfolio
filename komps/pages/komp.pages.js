@@ -7,11 +7,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
         kmptd.add("home_page",
             `
             <p var="welcome">welcome_msg</p>
-            <img var="img_mountain">
-            <button var="get_started">get_started_text</button>
+            <button var="get_started" class="buttons">get_started_text</button>
             
             <content id="home_content">
-                <button var="to_feed">to_feed_text</button>
+                <button var="to_feed" class="buttons">to_feed_text</button>
                 <home_feed>
                     <foreach src="feed" as="post"></foreach>
                 </home_feed>
@@ -167,17 +166,17 @@ const pages = {};
 pages.home = new Page("home",
     {
         welcome: "Bienvenue",
-        img_mountain: {src: PATH.IMAGES+"placeholder.png", alt: "montagnes hivernale"},
-        get_started: {innerHTML: "Démarrer", event: {type: "click", func: ()=>{Web.Move.To.Element(document.getElementById("home_content"))}}},
-        to_feed: {innerHTML: "Veille", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("feed_page")}}},
+        img_mountain: {src: PATH.IMAGES+"mountain.svg", alt: "montagnes hivernale"},
+        get_started: {innerHTML: "<buttonText>Démarrer</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Element(document.getElementById("home_content"))}}},
+        to_feed: {innerHTML: "<buttonText>Veille</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("feed_page")}}},
     },
     Language.list.FRENCH.code)
 
 Language.setValue(pages.home.content, {
     welcome: "Welcome",
     img_mountain: Language.getValue(pages.home.content).img_mountain,
-    get_started: {innerHTML: "Get Started", event: Language.getValue(pages.home.content).get_started.event},
-    to_feed: {innerHTML: "Feed", event: Language.getValue(pages.home.content).to_feed.event},
+    get_started: {innerHTML: "<buttonText>Get Started</buttonText>", event: Language.getValue(pages.home.content).get_started.event},
+    to_feed: {innerHTML: "<buttonText>Feed</buttonText>", event: Language.getValue(pages.home.content).to_feed.event},
 }, Language.list.ENGLISH.code);
 
 
