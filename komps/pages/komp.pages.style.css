@@ -28,8 +28,8 @@ home_page{
         };
         > button {
             width: 20vw;
-            min-height: 8vh;
-            max-height: 20vh;
+            min-height: 4vw;
+            max-height: 8vw;
 
 
             padding: 5px;
@@ -67,7 +67,7 @@ home_page{
             };
             > button{
                 width: 50vw;
-                min-height: 6vh;
+                max-height: 6vw;
 
                 buttonText{
                     font-size: 2vw;

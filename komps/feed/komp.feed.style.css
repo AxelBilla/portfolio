@@ -22,6 +22,7 @@ post{
     border-width: 3px;
     titles{
         font-family: "Hoves";
+        font-size: 1vw;
     };
     content{
         display: flex;
