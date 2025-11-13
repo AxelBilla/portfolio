@@ -9,9 +9,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
             <p var="welcome">welcome_msg</p>
             <button var="get_started" class="buttons">get_started_text</button>
             
-            <content id="home_content">
+            <content>
                 <button var="to_feed" class="buttons">to_feed_text</button>
-                <home_feed>
+                <home_feed id="home_content">
                     <foreach src="feed" as="post"></foreach>
                 </home_feed>
             </content>
