@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("projects_page",
             `
-            <h1 var="title">project_title</h1>
+            <h1><span var="title">project_title</span></h1>
             <foreach src="projects" as="project"></foreach>
             `,
             "load", (self)=>{
@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("socials_page",
             `
-            <h1 var="title">socials_title</h1>
+            <h1><span var="title">socials_title</span></h1>
             <links>
                 <foreach src="socials" as="social"></foreach>
             </links>
@@ -83,7 +83,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("education_page",
             `
-            <h1 var="title">education_title</h1>
+            <h1><span var="title">education_title</span></h1>
             <foreach src="educations" as="education"></foreach>
             `,
             "load", (self)=>{
@@ -105,7 +105,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("feed_page",
             `
-            <h1 var="title">feed_title</h1>
+            <h1><span var="title">feed_title</span></h1>
             <foreach src="feed" as="post"></foreach>
             `,
             "load", (self)=>{
@@ -127,7 +127,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("cv_page",
             `
-            <h1 var="title">cv_title</h1>
+            <h1><span var="title">cv_title</span></h1>
             <kompact as="cv"></kompact>
             `,
             "load", (self)=>{
@@ -207,7 +207,7 @@ Language.setValue(pages.socials.content,  {
 
 
 
-pages.educations = new Page("education",
+pages.educations = new Page("educations",
     {
         title: "Éducation"
     },

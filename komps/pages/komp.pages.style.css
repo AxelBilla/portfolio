@@ -105,6 +105,26 @@ home_page{
     };
 }
 
+.pages{
+    display: block;
+    background-color: cadetblue;
+    width: 85%;
+    padding: 20px;
+    padding-top: 5px;
+    border-radius: 6px;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    background: #2a9b92;
+    background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
+    background-size: 200% 200%;
+    animation: GradientAnimation 20s ease infinite;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    border-color: rgba(255, 245, 227, 0.42);
+    border-style: solid;
+    border-width: 3px;
+}
+
 .pages > :first-child{
     display: flex;
     flex-direction: column;
@@ -133,5 +153,11 @@ home_page{
     margin: 5px;
 
     margin: 2%;
+    span{
+        background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        align-content: center;
+    }
 
 }

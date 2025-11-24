@@ -8,10 +8,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         kmptd.add("education",
             `
-            <info>
+            <info class="buttons">
                 <p>edu_name</p>
                 <p>edu_location</p>
-                <p> <span>edu_start_year</span> - <span>edu_end_year</span></p>
+                <p> <span>edu_start_year</span> <span>-</span> <span>edu_end_year</span></p>
             </info>
             <content>
             </content>
@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
                     ps[0].innerText = values.name;
                     ps[1].innerText = values.location;
                     spns[0].innerText = values.start_year;
-                    spns[1].innerText = values.end_year;
+                    spns[2].innerText = values.end_year;
 
                     let titles = Object.values(values.content.titles);
                     let para = Object.values(values.content.paragraphs);
