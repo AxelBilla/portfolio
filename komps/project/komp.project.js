@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
     
     let project_scope = document.body;
 
-    project_KOMPACTED.set("projects", projects)
+    project_KOMPACTED.set("projects", projects.reverse())
     project_KOMPACTED.new((kmptd)=>{
         kmptd.add("project",
             `

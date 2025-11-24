@@ -60,7 +60,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
         kmptd.add("socials_page",
             `
             <h1 var="title">socials_title</h1>
-            <foreach src="socials" as="social"></foreach>
+            <links>
+                <foreach src="socials" as="social"></foreach>
+            </links>
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
