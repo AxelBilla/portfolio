@@ -6,7 +6,7 @@ feed{
 post{
     display: block;
     background-color: cadetblue;
-    width: 95%;
+    width: 85%;
     padding: 20px;
     padding-top: 5px;
     border-radius: 6px;
@@ -50,5 +50,8 @@ post{
         embed {
             width: 80%;
         };
+        origin{
+            font-size: 1vw;
+        }
     },
 }

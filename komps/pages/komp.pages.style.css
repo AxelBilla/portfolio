@@ -105,6 +105,12 @@ home_page{
     };
 }
 
+.pages > :first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .pages > :first-child > h1{
     font-size: 2vw;
     font-family: "Hoves";

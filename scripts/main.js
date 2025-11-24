@@ -31,6 +31,9 @@ class Web{
                 let main = document.body.children[1];
                 main.replaceChildren(komp);
                 Kompacted.getKompacted('pages').load(main, true);
+                
+                window.scrollTo(0,0);
+                Web.Set.Page(endpoint);
             }
             
             static Element(element, scroll_type = "smooth"){
@@ -87,6 +90,10 @@ class Web{
                 Web.Set.Attribute(element, entry[0], entry[1]);
             }
         }
+        
+        static Page(name){
+            sessionStorage.setItem("page", name)
+        }
     }
     static Object = class{
         static HTML = class{
@@ -110,3 +117,9 @@ HTMLElement.prototype.getElementsByAttribute = function(attr, value=null){
     }
     return element_list;
 }
+
+// Reload last visited page
+window.addEventListener("DOMContentLoaded", ()=>{
+    let current_page = sessionStorage.getItem("page");
+    if(!isNull(current_page)) Web.Move.To.Endpoint(current_page);
+})

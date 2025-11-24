@@ -8,14 +8,17 @@ window.addEventListener("DOMContentLoaded", ()=>{
         kmptd.add("project",
             `
             <titles>
-                <p>project_name</p>
+                <a>project_name</a>
                 <p>project_date</p>
             </titles>
             <content>
                 <text>
                     <main>
+                        <sub>
                         <p>main_title</p>
                         <p>main_text</p>
+                        </sub>
+                        <img src="" alt="ded">
                     </main>
                     <requirement>
                         <p>req_title</p>
@@ -26,7 +29,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
                         <p>detail_text</p>
                     </detail>
                 </text>
-                <img src="" alt="">
             </content>
             `,
             "load", (self)=>{
@@ -34,19 +36,23 @@ window.addEventListener("DOMContentLoaded", ()=>{
                     let values = Language.getValue(JSON.parse(self.Values().content));
 
                     let title = self.getElementsByTagName('titles')[0];
-                    let title_text = title.getElementsByTagName('p');
-                    title_text[0].innerHTML = values.name;
-                    title_text[1].innerHTML = values.date;
+                    let title_name = title.getElementsByTagName('a')[0];
+                    let title_date = title.getElementsByTagName('p')[0];
+                    title_name.innerHTML = values.name;
+                    title_name.href = values.url;
+                    title_date.innerHTML = values.date;
 
                     let text = self.getElementsByTagName("text")[0];
                     let content = Object.values(values.content);
                     for (let i = 0; i < text.children.length; i++) {
                         let txt = text.children[i].getElementsByTagName('p');
-                        txt[0].innerHTML = content[i].title;
-                        txt[1].innerHTML = content[i].text;
+                        if(txt.length>0) {
+                            txt[0].innerHTML = content[i].title
+                            txt[1].innerHTML = content[i].text;
+                        }
                     }
 
-                    let image = self.getElementsByTagName('img')[0];
+                    let image = text.getElementsByTagName('img')[0];
                     image.setAttribute('src', PATH.IMAGES+values.content.images.img1);
                 }
                 setValue();
