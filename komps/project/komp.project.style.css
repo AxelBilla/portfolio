@@ -8,8 +8,9 @@ project{
     margin-bottom: 1vw;
     margin-top: 1vw;
     background: #2a9b92;
-    background: linear-gradient(145deg,rgb(59, 211, 198) 0%, rgb(231, 90, 224) 50%, rgb(245, 66, 132) 100%);
+    background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
     background-size: 200% 200%;
+    animation: GradientAnimation 20s ease infinite;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
     border-color: rgba(255, 245, 227, 0.42);
