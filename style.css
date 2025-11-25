@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Qaz';
+    src: url('./assets/fonts/qaz.ttf');
+}
+@font-face {
+    font-family: 'Iconic-Bold';
+    src: url('./assets/fonts/iconic-b.ttf');
+}
+@font-face {
+    font-family: 'Iconic';
+    src: url('./assets/fonts/iconic.ttf');
+}
+@font-face {
+    font-family: 'Hoves';
+    src: url('./assets/fonts/tt-hoves.ttf');
+}
+@font-face {
+    font-family: '8bit';
+    src: url('./assets/fonts/8bitOperatorPlus-Bold.ttf');
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+    background: #a6a6ff;
+    background: linear-gradient(271deg, #95d8ff, #d390ff, #FF96DF);
+    background-size: 600% 600%;
+    animation: GradientAnimation 20s ease infinite;
+
+}
+
+body > main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-top: 6vw;
+}
+
+.buttons{
+    cursor: pointer;
+    user-select: none;  
+}
+
+@keyframes GradientAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

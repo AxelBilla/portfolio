@@ -1,0 +1,54 @@
+nav{
+    position: fixed;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background: linear-gradient(271deg, #95d8ffa0, #d390ffa0, #FF96DFa0);
+    animation: GradientAnimation 20s ease infinite;
+        
+    width: 100%;
+    min-height: 6vw;
+    
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: rgba(112, 83, 255, 0.42);
+    > :hover{
+        transform: translateY(5px);
+    };
+    > nav_icon{
+        display: flex;
+        justify-content: center;
+        
+        width: 15%;
+        min-height: 3.7vw;
+        
+        border-radius: 7px;
+        
+        p{
+            font-size: 2vw;
+            font-family: "8bit";
+            background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            align-content: center;
+            margin: 5px;
+            overflow: hidden;
+        }
+
+        background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
+        background-size: 200% 200%;
+        animation: GradientAnimation 20s ease infinite;
+
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+        border-color: rgba(255, 245, 227, 0.42);
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 20px;
+
+    },
+}

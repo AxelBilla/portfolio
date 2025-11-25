@@ -1,0 +1,87 @@
+project{
+    display: block;
+    background-color: cadetblue;
+    width: 85%;
+    padding: 20px;
+    padding-top: 5px;
+    border-radius: 6px;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    background: #2a9b92;
+    background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
+    background-size: 200% 200%;
+    animation: GradientAnimation 20s ease infinite;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    border-color: rgba(255, 245, 227, 0.42);
+    border-style: solid;
+    border-width: 3px;
+    titles{
+        p{
+            font-family: "8bit";
+            font-size: 4vw;
+            margin: 0;
+            margin-left: 2vw;
+
+            background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            align-content: center;  
+            overflow: hidden;
+            
+        };
+        a{
+            font-family: "8bit";
+            font-size: 4vw;
+            margin: 0;
+            font-size: 6vw;
+            text-decoration: none;
+            margin-left: 2vw;
+        }; 
+        a:hover{
+
+            display: block;
+            transform: translateX(5px);
+
+        };
+
+    };
+    content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-bottom: 1vw;
+        font-size: 2vw;
+        font-family: Hoves;
+        text{
+            width: 90%;
+            item{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                sub{
+                    p:first-child{
+                        font-size: 2.5vw;
+                        margin-bottom: 1vw;
+                    };
+                    p{
+                        margin: 0;
+                    }
+                    margin: 0;
+                    margin-right: 2.5vw;
+                }
+                img {
+                    display: block;
+                    max-width: 50vw;
+                    max-height: 25vw;
+                };
+                margin-top: 1.5vh;
+            }
+            
+        };
+    };
+}
+
