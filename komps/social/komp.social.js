@@ -40,6 +40,6 @@ class Social{
 
 const socials = [
     new Social("Github", "https://github.com/AxelBilla", "github.svg"),
-    new Social("LinkedIn", "https://www.linkedin.com/axelbilla", "linkedin.svg"),
+    new Social("LinkedIn", "https://www.linkedin.com/in/axelbilla", "linkedin.svg"),
     new Social("Mail", "mailto:axelbillapro@gmail.com", "mail.svg")
 ]
