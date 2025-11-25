@@ -18,7 +18,9 @@ education{
     border-style: solid;
     border-width: 3px;
     
+    
     info {
+
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -30,8 +32,16 @@ education{
             margin: 0; 
             
         };
+        p{
+            font-family: "8bit";
+            background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            align-content: center;
+            margin: 5px;
+            overflow: hidden;
+        };
         p:last-child{
-            font-family: Hoves;
             padding: 1.2vw;
             background: #2a9b92;
             background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
@@ -43,9 +53,8 @@ education{
             border-style: solid;
             border-width: 3px;
             border-radius: 20vw;
-            color: ;
             span{
-                font-family: "Hoves";
+                font-family: Hoves;
                 background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -55,14 +64,53 @@ education{
                 overflow: hidden;
             }
         };
-
-        margin: 0.5vw;
     };
     content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
         education_content{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1vw;
             text{
-                
+                p {
+                    font-family: Hoves;
+                    font-size: 2vw;
+                    span{
+                        font-family: Hoves;
+                        background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+
+                        align-content: center;
+                        margin: 5px;
+                        overflow: hidden;
+                    };
+                };
+                p:first-child {
+                    font-size: 2.5vw;
+                    text-align: center;
+                    padding: 1.2vw;
+                    background: #2a9b92;
+                    background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
+                    background-size: 200% 200%;
+                    animation: GradientAnimation 20s ease infinite;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+                    border-color: rgba(255, 245, 227, 0.42);
+                    border-style: solid;
+                    border-width: 3px;
+                    border-radius: 20vw;
+                };
             };
+            img{
+              width: 30vw;  
+            };
+            
         };
     };
 }

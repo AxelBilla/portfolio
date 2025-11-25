@@ -62,6 +62,7 @@ class Kompacted{
     }
     
     static getKompacted(identifier){
+
         if(Kompacted.hasKompacted(identifier)){
             return Kompacted.named_list[identifier];
         }

@@ -24,11 +24,13 @@ post{
     titles{
         font-family: "Hoves";
         font-size: 1vw;
+        
     };
     content{
         display: flex;
         flex-direction: column;
         detail{
+            
             font-size: 1vw;
             author{
 
@@ -41,12 +43,13 @@ post{
             font-size: 2.5vw;
         }
         a{
-
+            text-decoration: none;
             font-size: 1.5vw;
+            
         }
         p{
             font-size: 1.5vw;
-            font-family: "Hoves";
+            font-family: Hoves;
         };
         embed {
             width: 80%;

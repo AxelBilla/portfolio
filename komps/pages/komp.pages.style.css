@@ -38,7 +38,7 @@ home_page{
 
             buttonText{
                 font-size: 2vw;
-                font-family: "Hoves";
+                font-family: "8bit";
                 background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -71,7 +71,7 @@ home_page{
 
                 buttonText{
                     font-size: 2vw;
-                    font-family: "Hoves";
+                    font-family: "8bit";
                     background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
                     background-clip: text;
                     -webkit-text-fill-color: transparent;
@@ -108,7 +108,7 @@ home_page{
 .pages{
     display: block;
     background-color: cadetblue;
-    width: 85%;
+    width: 95%;
     padding: 20px;
     padding-top: 5px;
     border-radius: 6px;
@@ -133,7 +133,7 @@ home_page{
 }
 .pages > :first-child > h1{
     font-size: 2vw;
-    font-family: "Hoves";
+    font-family: "8bit";
     color: #f0f8ff;
     
     text-align: center;

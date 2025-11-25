@@ -46,34 +46,35 @@ window.addEventListener("DOMContentLoaded", ()=>{
                         content.appendChild(el_content);
                     }
                     kmptd.load(content, true);
-                    
-                    let default_display = content.style.display;
-                    content.style.display = "none";
-                    
-                    info.addEventListener("click", ()=>{
-                        // need animation but god enough for now
-                        if(content.style.display === "none") content.style.display = default_display;
-                        else content.style.display = "none";
-                    })
                 }
                 setValue();
                 Language.onUpdate(setValue);
+
+                let info = self.getElementsByTagName("info")[0];
+                let content = self.getElementsByTagName("content")[0];
+                let default_display = content.style.display;
+                content.style.display = "none";
+                info.addEventListener("click", ()=>{
+                    // need animation but god enough for now
+                    if(content.style.display === "none") content.style.display = default_display;
+                    else content.style.display = "none";
+                })
             }
         );
 
         kmptd.add("education_content",
             `
             <text>
-                <p>title</p>
-                <p>paragraph</p>
+                <p><span>title</span></p>
+                <p><span>paragraph</span></p>
             </text>
             `,
             "load", (self)=>{
                 let content = self.Values();
-                let ps = self.getElementsByTagName("p");
+                let spns = self.getElementsByTagName("span");
 
-                ps[0].innerText = content.title;
-                ps[1].innerText = content.paragraph;
+                spns[0].innerText = content.title;
+                spns[1].innerText = content.paragraph;
 
                 let image = document.createElement("img");
                 image.setAttribute("src", PATH.IMAGES+content.image);
@@ -110,7 +111,7 @@ class Education{
 //////////////////////////////////
 
 const educations = []
-educations.push(new Education("BTS Systèmes Informatiques aux Entreprises Option SLAM", "Lycée Paris Turgot", 2024, 2026,
+educations.push(new Education("BTS Systèmes Informatiques aux Entreprises\nOption SLAM", "Lycée Paris Turgot", 2024, 2026,
     {
         titles: {
             t1: "Support et mise à disposition de services informatiques",
@@ -131,7 +132,7 @@ educations.push(new Education("BTS Systèmes Informatiques aux Entreprises Optio
 
 Language.setValue(educations[0].content,
     new Education.INFO(
-        "BTS Systèmes Informatiques aux Entreprises Option SLAM\n[Higher BTEC Equivalent]",
+        "BTS Systèmes Informatiques aux Entreprises\nOption SLAM\n[Higher BTEC Equivalent]",
         "Paris Turgot",
         2024, 2026,
         {
@@ -156,7 +157,7 @@ Language.setValue(educations[0].content,
 
 
 
-educations.push(new  Education("Bac Pro Systèmes Numériques Option RISC", "Lycée Professionnel Jacques Prévert", 2019, 2023, {
+educations.push(new  Education("Bac Pro Systèmes Numériques\nOption RISC", "Lycée Professionnel Jacques Prévert", 2019, 2023, {
     titles: {
         t1: "Appréhender la mise en oeuvre d'un projet simulé ou réel d'installation d'un système",
         t2: "Analyser le fonctionnement de l'installation actuelle ou de l'équipement en vue de l'intervention",
@@ -179,7 +180,7 @@ educations.push(new  Education("Bac Pro Systèmes Numériques Option RISC", "Lyc
 
 Language.setValue(educations[1].content,
     new Education.INFO(
-        "Bac Pro Systèmes Numériques Option RISC\n[BTEC Equivalent]",
+        "Bac Pro Systèmes Numériques\nOption RISC\n[BTEC Equivalent]",
         "Vocational High School Jacques Prévert",
         2019, 2023,
         {

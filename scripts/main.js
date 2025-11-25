@@ -63,8 +63,8 @@ class Web{
             return element;
         }
         static Elements(parent, name, html, vars={}, vars_attr_name = "var"){
-            for (let value of Object.values(values)){
-                parent.append(Web.Create.Element(name, html, vars, vars_attr_name));
+            for (let value of Object.values(vars)){
+                parent.append(Web.Create.Element(name, html, value, vars_attr_name));
             }
         }
         

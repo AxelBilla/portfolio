@@ -7,27 +7,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
     project_KOMPACTED.new((kmptd)=>{
         kmptd.add("project",
             `
-            <titles>
+            <titles class="buttons">
                 <a>project_name</a>
                 <p>project_date</p>
             </titles>
             <content>
                 <text>
-                    <main>
-                        <sub>
-                        <p>main_title</p>
-                        <p>main_text</p>
-                        </sub>
-                        <img src="" alt="ded">
-                    </main>
-                    <requirement>
-                        <p>req_title</p>
-                        <p>req_text</p>
-                    </requirement>
-                    <detail>
-                        <p>detail_title</p>
-                        <p>detail_text</p>
-                    </detail>
                 </text>
             </content>
             `,
@@ -44,20 +29,33 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
                     let text = self.getElementsByTagName("text")[0];
                     let content = Object.values(values.content);
-                    for (let i = 0; i < text.children.length; i++) {
-                        let txt = text.children[i].getElementsByTagName('p');
-                        if(txt.length>0) {
-                            txt[0].innerHTML = content[i].title
-                            txt[1].innerHTML = content[i].text;
-                        }
-                    }
-
-                    let image = text.getElementsByTagName('img')[0];
-                    image.setAttribute('src', PATH.IMAGES+values.content.images.img1);
+                    
+                    text.replaceChildren();
+                    Web.Create.Elements(text,"item", `
+                    <item>
+                        <sub>
+                        <p var="title">main_title</p>
+                        <p var="text">main_text</p>
+                        </sub>
+                        <img var="image">
+                    </item>
+                    `, content);
+                    
                 }
                 setValue();
                 Language.onUpdate(setValue);
-                
+
+                let title = self.getElementsByTagName('titles')[0];
+                let text = self.getElementsByTagName("text")[0];
+                let default_display = text.style.display;
+                text.style.display = "none";
+                title.addEventListener("click", (e)=>{
+                    // need animation but god enough for now
+                    if(e.target.href==null) {
+                        if (text.style.display === "none") text.style.display = default_display;
+                        else text.style.display = "none";
+                    }
+                })
             }
         );
         
@@ -90,7 +88,8 @@ const projects = [];
 projects.push(new Project("Lecteur en Ligne", "Octobre 2024", "https://reader.billiard.dev/", {
     main: {
         title: "Lecteur de bande-dessinée, comic book et autres média imagés",
-        text: "Créer à l'occasion d'un projet proposé par nos professeurs avec comme objectif l'exploitation de nos compétences HTML et CSS en développant un site sur une thématique personnelle tout en respectant les instructions données."
+        text: "Créer à l'occasion d'un projet proposé par nos professeurs avec comme objectif l'exploitation de nos compétences HTML et CSS en développant un site sur une thématique personnelle tout en respectant les instructions données.",
+        image: {src: PATH.IMAGES+"webreader_sample.PNG"}
     },
     requirement: {
         title: "Obligations",
@@ -100,13 +99,13 @@ projects.push(new Project("Lecteur en Ligne", "Octobre 2024", "https://reader.bi
         title: "Détails",
         text: "Stack: HTML/CSS, JavaScript, JQuery."
     },
-    images: {img1: "webreader_sample.PNG"}
 }, Language.list.FRENCH.code))
 
 Language.setValue(projects[0].content, new Project.INFO("Web Reader", "October 2024", "https://reader.billiard.dev/", {
     main: {
-        title: "Book Reader\"From comics to manga, and even novels.\"",
-        text: "Created for a project given by our teachers with the aim of exploiting our HTML and CSS skills by developing a themed personal website while respecting a given set of instructions."
+        title: "Book Reader<br>\"From comics to manga, and even novels.\"",
+        text: "Created for a project given by our teachers with the aim of exploiting our HTML and CSS skills by developing a themed personal website while respecting a given set of instructions.",
+        image: Language.getValue(projects[0].content, Language.list.FRENCH.code).content.main.image
     },
     requirement: {
         title: "Requirements",
@@ -116,7 +115,6 @@ Language.setValue(projects[0].content, new Project.INFO("Web Reader", "October 2
         title: "Details",
         text: "Stack: HTML/CSS, JavaScript, JQuery."
     },
-    images: Language.getValue(projects[0].content, Language.list.FRENCH.code).content.images
 }), Language.list.ENGLISH.code);
 
 
@@ -124,7 +122,8 @@ Language.setValue(projects[0].content, new Project.INFO("Web Reader", "October 2
 projects.push(new Project("Caloric Fool", "Avril 2025", "https://calorie.billiard.dev/", {
     main: {
         title: "Traqueur de calories",
-        text: "Créé à l'occasion d'un projet proposé par nos professeurs avec comme objectif l'exploitation du modèle MVC en développant un site sur une thématique personnelle tout en respectant les instructions données."
+        text: "Créé à l'occasion d'un projet proposé par nos professeurs avec comme objectif l'exploitation du modèle MVC en développant un site sur une thématique personnelle tout en respectant les instructions données.",
+        image: {src: PATH.IMAGES+"caloric_sample.PNG"}
     },
     requirement: {
         title: "Obligations",
@@ -133,14 +132,14 @@ projects.push(new Project("Caloric Fool", "Avril 2025", "https://calorie.billiar
     details: {
         title: "Détails",
         text: "Stack:\nHTML/CSS, PostgreSQL, Javascript, Node.js, Express.js, JQuery."
-    },
-    images: {img1: "caloric_sample.PNG"}
+    }
 }, Language.list.FRENCH.code))
 
 Language.setValue(projects[1].content, new Project.INFO("Caloric Fool", "April 2025", "https://calorie.billiard.dev/", {
     main: {
         title: "Calorie Tracker",
-        text: "Created for a project given by our teachers with the aim of exploiting the MVC model by developing a themed personal website while respecting a given set of instructions."
+        text: "Created for a project given by our teachers with the aim of exploiting the MVC model by developing a themed personal website while respecting a given set of instructions.",
+        image: Language.getValue(projects[1].content, Language.list.FRENCH.code).content.main.image,
     },
     requirement: {
         title: "Requirements",
@@ -150,5 +149,4 @@ Language.setValue(projects[1].content, new Project.INFO("Caloric Fool", "April 2
         title: "Details",
         text: "Stack:\nHTML/CSS, PostgreSQL, Javascript, Node.js, Express.js, JQuery."
     },
-    images: Language.getValue(projects[1].content, Language.list.FRENCH.code).content.images
 }), Language.list.ENGLISH.code);
