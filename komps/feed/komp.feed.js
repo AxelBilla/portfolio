@@ -59,7 +59,7 @@ class Request{
     static Reddit = class{
         static Fetch = class{
             static async Posts(limit){
-                const request_reddit_feed = await fetch("http://54.37.69.170:9950/reddit/posts/vetted", {
+                const request_reddit_feed = await fetch("https://54.37.69.170:9950/reddit/posts/vetted", {
                     method: "POST",
                     headers: { "Content-Type": "application/json"},
                     body: JSON.stringify({limit: limit}),
