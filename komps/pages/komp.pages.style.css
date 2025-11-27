@@ -6,13 +6,12 @@ home_page{
         flex-direction: column;
         align-items: center;
 
-
         width: 100%;
         padding-bottom: 5vw;
         
         > p{
             font-family: "Hoves";
-            font-size: 15vw;
+            font-size: 18vw;
             margin: 5px;
             margin-top: 12vw;
             background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb   );
@@ -27,17 +26,19 @@ home_page{
             transform: translateY(5px);
         };
         > button {
-            width: 20vw;
+            width: fit-content;
             min-height: 4vw;
             max-height: 8vw;
 
-
             padding: 5px;
+            padding-left: 4vw;
+            padding-right: 4vw;
+            
             margin-top: 3vh;
 
 
             buttonText{
-                font-size: 2vw;
+                font-size: 3vw;
                 font-family: "8bit";
                 background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
                 background-clip: text;
@@ -69,12 +70,13 @@ home_page{
                 transform: translateY(5px);
             };
              button{
-                width: 70vw;
-                max-height: 6vw;
+                 width: fit-content;
+                 padding-left: 40vw;
+                 padding-right: 40vw;
 
                 buttonText{
                     text-align: center;
-                    font-size: 2vw;
+                    font-size: 3vw;
                     font-family: "8bit";
                     background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
                     background-clip: text;
@@ -157,7 +159,7 @@ home_page{
                     };
                 };
                 > img{
-                    width: 30vw;
+                    width: 40vw;
                 }
                 padding-bottom: 5vh;
             }
@@ -179,7 +181,7 @@ home_page{
 .pages{
     display: block;
     background-color: cadetblue;
-    width: 95%;
+    width: 90vw;
     padding: 20px;
     padding-top: 5px;
     border-radius: 6px;
@@ -203,7 +205,7 @@ home_page{
     align-items: center;
 }
 .pages > :first-child > h1{
-    font-size: 2vw;
+    font-size: 3vw;
     font-family: "8bit";
     color: #f0f8ff;
     
@@ -221,14 +223,11 @@ home_page{
     border-style: solid;
     border-width: 3px;
     border-radius: 20px;
-    margin: 5px;
-
     margin: 2%;
     span{
         background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        align-content: center;
     }
 
 }

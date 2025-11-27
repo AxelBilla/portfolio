@@ -178,11 +178,11 @@ pages.home = new Page("home",
     {
         welcome: "Bienvenue",
         get_started: {innerHTML: "<buttonText>Démarrer</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Element(document.getElementById("home_content"))}}},
-        me_img: {src: PATH.IMAGES+"webreader_sample.PNG", alt: "Image de ma personne"},
+        me_img: {src: PATH.IMAGES+"me.svg", alt: "Image de ma personne"},
         me_title: "Et moi?",
         me_text: `
                 Hey! Je suis <button var=\"to_cv\" class=\"buttons\">to_cv_text</button>.<br>
-                Une dev avec un p'tit<br>peu trop de <button var=\"to_projects\" class=\"buttons\">to_cv_text</button>!<br>
+                Une dev avec un p'tit<br>peu trop de <button var=\"to_projects\" class=\"buttons\">to_cv_text</button> !<br>
                 J'ai des tonnes d' <button var=\"to_career\" class=\"buttons\">to_career_text</button> !
        `,
         to_socials: {innerHTML: "<buttonText>Envie de moi?</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("socials_page"); }}},
@@ -199,7 +199,7 @@ Language.setValue(pages.home.content, {
     me_img: { src: Language.getValue(pages.home.content).me_img.src, alt: "Depiction of myself"},
     me_title: "Who am I?",
     me_text: `
-                Howdy! The name's <button var=\"to_cv\" class=\"buttons\">to_cv_text</button>.<br>
+                Howdy! I'm <button var=\"to_cv\" class=\"buttons\">to_cv_text</button>.<br>
                 A dev with a lil' too much <button var=\"to_projects\" class=\"buttons\">to_cv_text</button> for their craft!<br>
                 I've got loads of <button var=\"to_career\" class=\"buttons\">to_career_text</button> to boast about too!
        `,
