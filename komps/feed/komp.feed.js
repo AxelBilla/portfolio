@@ -62,7 +62,7 @@ class Request{
                 const request_reddit_feed = await fetch("https://54.37.69.170:9950/reddit/posts/vetted", {
                     method: "POST",
                     headers: { "Content-Type": "application/json"},
-                    body: JSON.stringify({limit: limit}),
+                    body: JSON.stringify({"limit": limit}),
                 })
                 return await request_reddit_feed.json();
             }

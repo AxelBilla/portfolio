@@ -135,11 +135,11 @@ projects.push(new Project("Caloric Fool", "Avril 2025", "https://calorie.billiar
     }
 }, Language.list.FRENCH.code))
 
-Language.setValue(projects[1].content, new Project.INFO("Caloric Fool", "April 2025", "https://calorie.billiard.dev/", {
+Language.setValue(projects[projects.length-1].content, new Project.INFO("Caloric Fool", "April 2025", "https://calorie.billiard.dev/", {
     main: {
         title: "Calorie Tracker",
         text: "Created for a project given by our teachers with the aim of exploiting the MVC model by developing a themed personal website while respecting a given set of instructions.",
-        image: Language.getValue(projects[1].content, Language.list.FRENCH.code).content.main.image,
+        image: Language.getValue(projects[projects.length-1].content, Language.list.FRENCH.code).content.main.image,
     },
     requirement: {
         title: "Requirements",
@@ -148,5 +148,37 @@ Language.setValue(projects[1].content, new Project.INFO("Caloric Fool", "April 2
     details: {
         title: "Details",
         text: "Stack:\nHTML/CSS, PostgreSQL, Javascript, Node.js, Express.js, JQuery."
+    },
+}), Language.list.ENGLISH.code);
+
+projects.push(new Project("Kompacted", "Octobre 2025", "https://github.com/AxelBilla/Kompacted", {
+    main: {
+        title: "Gestionnaire de Composants Simplifié",
+        text: "Une librairie pour faciliter la production d'applications web utilisant JavaScript, en implémentant des composants côté client.",
+        image: {src: PATH.IMAGES+"KOMPACTED_LOGO.svg"}
+    },
+    origin: {
+        title: "Aussi vue ici!",
+        text: "Un outil né d'un besoin de créer et d'itérer rapidement sur le contenu de sites (principalement) client-side."
+    },
+    details: {
+        title: "Détails",
+        text: "Stack:\nJavascript."
+    }
+}, Language.list.FRENCH.code))
+
+Language.setValue(projects[projects.length-1].content, new Project.INFO("Kompacted", "October 2025", "https://github.com/AxelBilla/Kompacted", {
+    main: {
+        title: "Simple Component Manager",
+        text: "A library meant to facilitate the production of web applications using JavaScript, by implementing client-side components.",
+        image: Language.getValue(projects[projects.length-1].content, Language.list.FRENCH.code).content.main.image,
+    },
+    origin: {
+        title: "Used on this very website!",
+            text: "A tool born from a need to build (mostly) client-sided, yet easily iterated upon, websites."
+    },
+    details: {
+        title: "Details",
+        text: "Stack:\nJavascript."
     },
 }), Language.list.ENGLISH.code);

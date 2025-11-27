@@ -10,8 +10,17 @@ window.addEventListener("DOMContentLoaded", ()=>{
             <button var="get_started" class="buttons">get_started_text</button>
             
             <content>
+                <anchor id="home_content"></anchor>
+                <about_me>
+                    <img var="me_img">
+                    <text>
+                        <h1 var="me_title">me_title</h1>
+                        <p var="me_text">me_text</p>
+                        <button var="to_cv" class="buttons">to_cv_text</button>
+                    </text>
+                </about_me>
                 <button var="to_feed" class="buttons">to_feed_text</button>
-                <home_feed id="home_content">
+                <home_feed>
                     <foreach src="feed" as="post"></foreach>
                 </home_feed>
             </content>
@@ -27,7 +36,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
                     // Takes a while for the feed to fill itself, so gotta timeout for a bit
                     setTimeout(()=>{
                         if(Kompacted.hasKompacted("feed")) Kompacted.load(self, true, [Kompacted.getKompacted("feed")])
-                    }, 1500)
+                    }, 500)
                 }
                 setValue();
                 Language.onUpdate(setValue);
@@ -81,21 +90,21 @@ window.addEventListener("DOMContentLoaded", ()=>{
             }
         );
 
-        kmptd.add("education_page",
+        kmptd.add("career_page",
             `
-            <h1><span var="title">education_title</span></h1>
-            <foreach src="educations" as="education"></foreach>
+            <h1><span var="title">career_title</span></h1>
+            <foreach src="careers" as="career"></foreach>
             `,
             "load", (self)=>{
                 let html = self.innerHTML;
                 self.classList.add(CSS.Class.list.pages.name);
                 let setValue = ()=> {
-                    let values = Language.getValue(pages.educations.content, Language.getCurrent())
+                    let values = Language.getValue(pages.careers.content, Language.getCurrent())
 
-                    let el = Web.Create.Element(pages.educations.name, html, values);
+                    let el = Web.Create.Element(pages.careers.name, html, values);
                     self.replaceChildren(el);
 
-                    Kompacted.load(self, true, [Kompacted.getKompacted("education")])
+                    Kompacted.load(self, true, [Kompacted.getKompacted("career")])
                 }
                 setValue();
                 Language.onUpdate(setValue);
@@ -168,16 +177,26 @@ const pages = {};
 pages.home = new Page("home",
     {
         welcome: "Bienvenue",
-        img_mountain: {src: PATH.IMAGES+"mountain.svg", alt: "montagnes hivernale"},
         get_started: {innerHTML: "<buttonText>Démarrer</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Element(document.getElementById("home_content"))}}},
+        me_img: {src: PATH.IMAGES+"webreader_sample.PNG", alt: "Image de ma personne"},
+        me_title: "fff",
+        me_text: "jofejfeojfeojfooj",
+        to_projects: {innerHTML: "<buttonText>PASSION</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("projects_page"); }}},
+        to_socials: {innerHTML: "<buttonText>Axel</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("socials_page"); }}},
+        to_cv: {innerHTML: "<buttonText>Mon CV</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("cv_page"); }}},
         to_feed: {innerHTML: "<buttonText>Veille</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("feed_page"); }}},
     },
     Language.list.FRENCH.code)
 
 Language.setValue(pages.home.content, {
     welcome: "Welcome",
-    img_mountain: Language.getValue(pages.home.content).img_mountain,
     get_started: {innerHTML: "<buttonText>Get Started</buttonText>", event: Language.getValue(pages.home.content).get_started.event},
+    me_img: { src: Language.getValue(pages.home.content).me_img.src, alt: "Depiction of myself"},
+    me_title: "Who am I?",
+    me_text: "The name's <button var=\"to_socials\" class=\"buttons\">AXEL</button>,<br>a dev with a lil' too much <button var=\"to_projects\" class=\"buttons\">PASSION</button> dekpfe<br>",
+    to_projects: {innerHTML: "<buttonText>PASSION</buttonText>", event: Language.getValue(pages.home.content).to_projects.event},
+    to_socials: {innerHTML: "<buttonText>Axel</buttonText>", event: Language.getValue(pages.home.content).to_socials.event},
+    to_cv: {innerHTML: "<buttonText>Check my CV</buttonText>", event: Language.getValue(pages.home.content).to_cv.event},
     to_feed: {innerHTML: "<buttonText>Feed</buttonText>", event: Language.getValue(pages.home.content).to_feed.event},
 }, Language.list.ENGLISH.code);
 
@@ -207,14 +226,14 @@ Language.setValue(pages.socials.content,  {
 
 
 
-pages.educations = new Page("educations",
+pages.careers = new Page("careers",
     {
-        title: "Éducation"
+        title: "Parcours"
     },
     Language.list.FRENCH.code)
 
-Language.setValue(pages.educations.content,  {
-    title: "Education"
+Language.setValue(pages.careers.content,  {
+    title: "Career"
 },  Language.list.ENGLISH.code)
 
 

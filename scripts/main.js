@@ -36,7 +36,7 @@ class Web{
                 Web.Set.Page(endpoint);
             }
             
-            static Element(element, scroll_type = "smooth"){
+            static Element(element, scroll_type = "smooth", offset=0){
                 element.scrollIntoView({behavior: scroll_type});
             }
         }

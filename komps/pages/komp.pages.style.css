@@ -24,7 +24,7 @@ home_page{
             width: 25vw;
         };
         > button:hover{
-            transform: translateY(-5px);
+            transform: translateY(5px);
         };
         > button {
             width: 20vw;
@@ -61,15 +61,19 @@ home_page{
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 90vh;
-            > button:hover{
-                transform: translateY(-5px);
+            padding-top: 75vh;
+            anchor{
+                padding-top: 15vh;
             };
-            > button{
-                width: 50vw;
+             button:hover{
+                transform: translateY(5px);
+            };
+             button{
+                width: 70vw;
                 max-height: 6vw;
 
                 buttonText{
+                    text-align: center;
                     font-size: 2vw;
                     font-family: "8bit";
                     background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
@@ -90,17 +94,84 @@ home_page{
                 border-width: 3px;
                 border-radius: 20px;
             };
+            > about_me{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                
+                width: 90vw;
+                > text{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 80vw;
+
+                    padding:5vw;
+                    text-align: center;
+                    h1{
+                        font-size: 8vw;  
+                        font-family: "8bit";
+                        margin: 0;
+                        background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    };
+                    p{
+                        align-items: center;
+                        font-family: Hoves;
+                        font-size: 4vw;
+                        margin: 0;
+                        background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        button{
+                            width: fit-content;
+                            padding-left: 1vw;
+                            padding-right: 1vw;
+                            margin:0;
+                            transform: translateY(-0.15vw);
+
+                            buttonText{
+                                font-size:2.5vw;
+                            }
+                        };
+                        button:hover{
+                            transform: translateY(0vw);
+                        };
+
+                    };
+                    > button:hover{
+                        transform: translateY(5px);
+                    };
+                    >   button{
+                        width: fit-content;
+                        padding-left: 2vw;
+                        padding-right: 2vw;
+                        max-height: 14vw;
+                        min-height: 8vw;
+                        margin-top: 3vh;
+                        buttonText{
+                            font-size:4vw;
+                        }
+                    };
+                };
+                > img{
+                    width: 30vw;
+                }
+                padding-bottom: 15vh;
+            }
             > home_feed {
                 margin-top: 1vh;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 
-                width: 70vw;
                 max-height: 80vh;
                 
                 overflow: scroll;
             };
+            
         }
     };
 }
