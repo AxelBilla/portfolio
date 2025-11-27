@@ -68,6 +68,12 @@ project{
                         margin-bottom: 1vw;
                     };
                     p{
+                        font-family: Hoves;
+                        background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                        animation: GradientAnimation 20s ease infinite;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+
                         margin: 0;
                     }
                     margin: 0;

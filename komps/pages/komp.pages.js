@@ -183,7 +183,7 @@ pages.home = new Page("home",
         me_text: `
                 Hey! Je suis <button var=\"to_cv\" class=\"buttons\">to_cv_text</button>.<br>
                 Une dev avec un p'tit<br>peu trop de <button var=\"to_projects\" class=\"buttons\">to_cv_text</button> !<br>
-                J'ai des tonnes d' <button var=\"to_career\" class=\"buttons\">to_career_text</button> !
+                J'ai des tonnes<br>d' <button var=\"to_career\" class=\"buttons\">to_career_text</button> !
        `,
         to_socials: {innerHTML: "<buttonText>Envie de moi?</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("socials_page"); }}},
         to_projects: {innerHTML: "<buttonText>PASSION</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("projects_page"); }}},

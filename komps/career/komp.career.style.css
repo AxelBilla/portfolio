@@ -85,6 +85,7 @@ career{
                     span{
                         font-family: Hoves;
                         background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                        animation: GradientAnimation 20s ease infinite;
                         background-clip: text;
                         -webkit-text-fill-color: transparent;
 

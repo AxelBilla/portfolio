@@ -4,7 +4,7 @@ class Language{
         FRENCH: {name: "Français (FR)", code: "fr-FR", icon: "fr_fr.png"}, 
         ENGLISH: {name: "English (US)", code: "en-US", icon: "en_us.png"},
     }
-    static current = Language.list.ENGLISH.code;
+    static current = Language.list.FRENCH.code;
     static default = Language.list.FRENCH.code;
 
     static getCurrent(){
