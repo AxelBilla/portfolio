@@ -61,9 +61,9 @@ home_page{
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 75vh;
+            padding-top: 85vh;
             anchor{
-                padding-top: 15vh;
+                padding-top: 5vh;
             };
              button:hover{
                 transform: translateY(5px);
@@ -119,8 +119,8 @@ home_page{
                     };
                     p{
                         align-items: center;
-                        font-family: Hoves;
-                        font-size: 4vw;
+                        font-family: "8bit";
+                        font-size: 3vw;
                         margin: 0;
                         background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
                         background-clip: text;
@@ -150,7 +150,7 @@ home_page{
                         padding-right: 2vw;
                         max-height: 14vw;
                         min-height: 8vw;
-                        margin-top: 3vh;
+                        margin-top: 5vh;
                         buttonText{
                             font-size:4vw;
                         }
@@ -159,7 +159,7 @@ home_page{
                 > img{
                     width: 30vw;
                 }
-                padding-bottom: 15vh;
+                padding-bottom: 5vh;
             }
             > home_feed {
                 margin-top: 1vh;

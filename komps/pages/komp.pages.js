@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
                     <text>
                         <h1 var="me_title">me_title</h1>
                         <p var="me_text">me_text</p>
-                        <button var="to_cv" class="buttons">to_cv_text</button>
+                        <button var="to_socials" class="buttons">to_socials_text</button>
                     </text>
                 </about_me>
                 <button var="to_feed" class="buttons">to_feed_text</button>
@@ -179,11 +179,16 @@ pages.home = new Page("home",
         welcome: "Bienvenue",
         get_started: {innerHTML: "<buttonText>Démarrer</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Element(document.getElementById("home_content"))}}},
         me_img: {src: PATH.IMAGES+"webreader_sample.PNG", alt: "Image de ma personne"},
-        me_title: "fff",
-        me_text: "jofejfeojfeojfooj",
+        me_title: "Et moi?",
+        me_text: `
+                Hey! Je suis <button var=\"to_cv\" class=\"buttons\">to_cv_text</button>.<br>
+                Une dev avec un p'tit<br>peu trop de <button var=\"to_projects\" class=\"buttons\">to_cv_text</button>!<br>
+                J'ai des tonnes d' <button var=\"to_career\" class=\"buttons\">to_career_text</button> !
+       `,
+        to_socials: {innerHTML: "<buttonText>Envie de moi?</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("socials_page"); }}},
         to_projects: {innerHTML: "<buttonText>PASSION</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("projects_page"); }}},
-        to_socials: {innerHTML: "<buttonText>Axel</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("socials_page"); }}},
-        to_cv: {innerHTML: "<buttonText>Mon CV</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("cv_page"); }}},
+        to_career: {innerHTML: "<buttonText>ÉXPERIENCE</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("career_page"); }}},
+        to_cv: {innerHTML: "<buttonText>AXEL</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("cv_page"); }}},
         to_feed: {innerHTML: "<buttonText>Veille</buttonText>", event: {type: "click", func: ()=>{Web.Move.To.Endpoint("feed_page"); }}},
     },
     Language.list.FRENCH.code)
@@ -193,10 +198,15 @@ Language.setValue(pages.home.content, {
     get_started: {innerHTML: "<buttonText>Get Started</buttonText>", event: Language.getValue(pages.home.content).get_started.event},
     me_img: { src: Language.getValue(pages.home.content).me_img.src, alt: "Depiction of myself"},
     me_title: "Who am I?",
-    me_text: "The name's <button var=\"to_socials\" class=\"buttons\">AXEL</button>,<br>a dev with a lil' too much <button var=\"to_projects\" class=\"buttons\">PASSION</button> dekpfe<br>",
+    me_text: `
+                Howdy! The name's <button var=\"to_cv\" class=\"buttons\">to_cv_text</button>.<br>
+                A dev with a lil' too much <button var=\"to_projects\" class=\"buttons\">to_cv_text</button> for their craft!<br>
+                I've got loads of <button var=\"to_career\" class=\"buttons\">to_career_text</button> to boast about too!
+       `,
+    to_socials: {innerHTML: "<buttonText>Check me out!</buttonText>", event: Language.getValue(pages.home.content).to_socials.event},
     to_projects: {innerHTML: "<buttonText>PASSION</buttonText>", event: Language.getValue(pages.home.content).to_projects.event},
-    to_socials: {innerHTML: "<buttonText>Axel</buttonText>", event: Language.getValue(pages.home.content).to_socials.event},
-    to_cv: {innerHTML: "<buttonText>Check my CV</buttonText>", event: Language.getValue(pages.home.content).to_cv.event},
+    to_career: {innerHTML: "<buttonText>EXPERIENCE</buttonText>", event: Language.getValue(pages.home.content).to_career.event},
+    to_cv: {innerHTML: "<buttonText>AXEL</buttonText>", event: Language.getValue(pages.home.content).to_cv.event},
     to_feed: {innerHTML: "<buttonText>Feed</buttonText>", event: Language.getValue(pages.home.content).to_feed.event},
 }, Language.list.ENGLISH.code);
 
