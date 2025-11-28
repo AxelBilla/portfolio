@@ -182,3 +182,36 @@ Language.setValue(projects[projects.length-1].content, new Project.INFO("Kompact
         text: "Stack:\nJavascript."
     },
 }), Language.list.ENGLISH.code);
+
+
+projects.push(new Project("StayUpToDate!", "Novembre 2025", "https://github.com/AxelBilla/StayUpToDate", {
+    main: {
+        title: "Scraper de Flux",
+        text: "Un outil pour se tenir à jour sur des sujets précis grâce à Reddit!",
+        image: {src: PATH.IMAGES+"StayUpToDate.svg"}
+    },
+    origin: {
+        title: {innerHTML: "Aussi utiliser ici!", event: {type: "click", func: (() =>{Web.Move.To.Endpoint("feed_page"); }).toString()}, class: "buttons"},
+        text: ""
+    },
+    details: {
+        title: "Détails",
+        text: "Stack:\nC#, .NET, Javascript."
+    }
+}, Language.list.FRENCH.code))
+
+Language.setValue(projects[projects.length-1].content, new Project.INFO("StayUpToDate!", "November 2025", "https://github.com/AxelBilla/StayUpToDate", {
+    main: {
+        title: "Feed Scraper",
+        text: "A tool to keep yourself up-to-date on a given topic's news using Reddit!",
+        image: Language.getValue(projects[projects.length-1].content, Language.list.FRENCH.code).content.main.image,
+    },
+    origin: {
+        title: {innerHTML:"Also used here!", event: Language.getValue(projects[projects.length-1].content, Language.list.FRENCH.code).content.origin.title.event, class: "buttons"},
+        text: ""
+    },
+    details: {
+        title: "Details",
+        text: "Stack:\nC#, .NET, Javascript."
+    },
+}), Language.list.ENGLISH.code);

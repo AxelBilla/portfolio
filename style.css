@@ -22,9 +22,9 @@
 
 :root{
     --white_text: linear-gradient(270deg, #fff5e3 0%, #fdecff 50%, #f0fffb 100%);
-    --background: linear-gradient(271deg, #95d8ff, #d390ff, #FF96DF);
+    --background: linear-gradient(270deg, #95d8ff, #d390ff, #FF96DF);
     --menu_background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
-    --nav_background: linear-gradient(271deg, #95d8ffa0, #d390ffa0, #FF96DFa0);
+    --nav_background: linear-gradient(270deg, #95d8ffa0, #d390ffa0, #FF96DFa0);
     --light_box_shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 

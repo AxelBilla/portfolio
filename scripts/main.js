@@ -77,6 +77,7 @@ class Web{
     static Set = class{
         static Attribute(element, attribute, value){
             if(attribute==="event" && value.hasOwnProperty("func")) {
+                if(typeof value.func === "string") value.func = eval(value.func);
                 element.addEventListener(value.type, value.func);
                 return;
             }
