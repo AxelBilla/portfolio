@@ -14,7 +14,9 @@ home_page{
             font-size: 18vw;
             margin: 5px;
             margin-top: 12vw;
-            background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb   );
+            background: var(--white_text);
+            background-size: 600% 600%;
+            animation: GradientAnimation 8s ease infinite;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         };
@@ -40,17 +42,19 @@ home_page{
             buttonText{
                 font-size: 3vw;
                 font-family: "8bit";
-                background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                background: var(--white_text);
+                background-size: 600% 600%;
+                animation: GradientAnimation 8s ease infinite;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
             
             background: #2a9b92;
-            background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
+            background: var(--menu_background);
             background-size: 200% 200%;
             animation: GradientAnimation 20s ease infinite;
 
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            box-shadow: var(--light_box_shadow);
 
             border-color: rgba(255, 245, 227, 0.42);
             border-style: solid;
@@ -78,16 +82,18 @@ home_page{
                     text-align: center;
                     font-size: 3vw;
                     font-family: "8bit";
-                    background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                    background: var(--white_text);
+                    background-size: 600% 600%;
+                    animation: GradientAnimation 8s ease infinite;
                     background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
                 
                 background: #2a9b92;
-                background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
+                background: var(--menu_background);
                 background-size: 200% 200%;
                 animation: GradientAnimation 20s ease infinite;
-                box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+                box-shadow: var(--light_box_shadow);
                 
                 margin: 5px;
                 
@@ -115,7 +121,9 @@ home_page{
                         font-size: 8vw;  
                         font-family: "8bit";
                         margin: 0;
-                        background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                        background: var(--white_text);
+                        background-size: 600% 600%;
+                        animation: GradientAnimation 8s ease infinite;
                         background-clip: text;
                         -webkit-text-fill-color: transparent;
                     };
@@ -124,7 +132,9 @@ home_page{
                         font-family: "8bit";
                         font-size: 3vw;
                         margin: 0;
-                        background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+                        background: var(--white_text);
+                        background-size: 600% 600%;
+                        animation: GradientAnimation 8s ease infinite;
                         background-clip: text;
                         -webkit-text-fill-color: transparent;
                         button{
@@ -188,10 +198,10 @@ home_page{
     margin-bottom: 1vw;
     margin-top: 1vw;
     background: #2a9b92;
-    background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
+    background: var(--menu_background);
     background-size: 200% 200%;
     animation: GradientAnimation 20s ease infinite;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: var(--light_box_shadow);
 
     border-color: rgba(255, 245, 227, 0.42);
     border-style: solid;
@@ -212,10 +222,10 @@ home_page{
     text-align: center;
     align-content: center;
     background: #2a9b92;
-    background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
+    background: var(--menu_background);
     background-size: 200% 200%;
     animation: GradientAnimation 20s ease infinite;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: var(--light_box_shadow);
 
     width: 90%;
     
@@ -225,7 +235,9 @@ home_page{
     border-radius: 20px;
     margin: 2%;
     span{
-        background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+        background: var(--white_text);
+        background-size: 600% 600%;
+        animation: GradientAnimation 8s ease infinite;
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }

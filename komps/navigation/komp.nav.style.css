@@ -7,7 +7,7 @@ nav{
     justify-content: space-evenly;
     align-items: center;
 
-    background: linear-gradient(271deg, #95d8ffa0, #d390ffa0, #FF96DFa0);
+    background: var(--nav_background);
     animation: GradientAnimation 20s ease infinite;
         
     width: 100%;
@@ -31,7 +31,9 @@ nav{
         p{
             font-size: 2vw;
             font-family: "8bit";
-            background: linear-gradient(270deg, #fff5e3, #fdecff, #f0fffb);
+            background: var(--white_text);
+            background-size: 600% 600%;
+            animation: GradientAnimation 8s ease infinite;
             background-clip: text;
             -webkit-text-fill-color: transparent;
 
@@ -40,11 +42,11 @@ nav{
             overflow: hidden;
         }
 
-        background: linear-gradient(145deg,rgb(137, 252, 242) 0%, rgb(238, 123, 232) 50%, rgb(233, 141, 174) 100%);
+        background: var(--menu_background);
         background-size: 200% 200%;
         animation: GradientAnimation 20s ease infinite;
 
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        box-shadow: var(--light_box_shadow);
 
         border-color: rgba(255, 245, 227, 0.42);
         border-style: solid;
