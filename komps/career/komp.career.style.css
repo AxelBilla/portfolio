@@ -118,6 +118,17 @@ career{
                 padding: 2vw;
                 width: 30vw;  
             };
+            column{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 1.2vw;
+                
+                embed{
+                    width: 50vw;
+                    height: 91vh;
+                }
+            }
             
         };
     };
