@@ -236,7 +236,7 @@ careers.push(new Career(`
     "Stage Développement Unity C# (2/2)", "MONGAME", 2025, 2026,
     {
         1: {
-            embed: {src: "", type: "application/pdf"},
+            embed: {src: "https://docs.google.com/document/d/1HwnzsX_wVF97OHBEuCze1nV_kwgL8Xh24GlzTU7O-34/", type: "application/pdf"},
             image: {src: PATH.IMAGES+"placeholder.png"},
         },
     },
@@ -254,4 +254,5 @@ Language.setValue(careers[careers.length-1].content,
                 image: {src: Language.getValue(careers[careers.length-1].content).content["1"].image.src},
             },
         }
+
     ), Language.list.ENGLISH.code);
