@@ -206,7 +206,7 @@ careers.push(new Career(`
     {
         1: {
             embed: {src: "https://docs.google.com/document/d/1h3c_9s8Du9m8zsmM8Z5swd3Q3CRuWN3bIGrADCvxwY8/", type: "application/pdf"},
-            image: {src: PATH.IMAGES+"placeholder.png"},
+            image: {src: PATH.IMAGES+"internship_bts_sio_mongame_2025.png"},
         },
     },
     Language.list.FRENCH.code))
@@ -237,7 +237,7 @@ careers.push(new Career(`
     {
         1: {
             embed: {src: "https://docs.google.com/document/d/1HwnzsX_wVF97OHBEuCze1nV_kwgL8Xh24GlzTU7O-34/", type: "application/pdf"},
-            image: {src: PATH.IMAGES+"placeholder.png"},
+            image: {src: PATH.IMAGES+"internship_bts_sio_mongame_2026.png"},
         },
     },
     Language.list.FRENCH.code))
@@ -256,3 +256,4 @@ Language.setValue(careers[careers.length-1].content,
         }
 
     ), Language.list.ENGLISH.code);
+
