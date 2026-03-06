@@ -219,7 +219,7 @@ Language.setValue(projects[projects.length-1].content, new Project.INFO("StayUpT
 
 projects.push(new Project("REDactor", "Mars 2026", "https://axelbilla.itch.io/redactor", {
     main: {
-        title: "Qui aurait cru qu'être un patriote soit si compliqué?",
+        title: "Qui aurait cru qu'être un patriote serait si compliqué?",
         text: "Ne laisse pas ses vermines commettre des atrocités sans rétribution!<br>Met fin aux campagnes de diffamation à l'encontre du Président!",
         image: {src: PATH.IMAGES+"Redactor.png"}
     },
