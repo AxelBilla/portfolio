@@ -175,7 +175,7 @@ Language.setValue(projects[projects.length-1].content, new Project.INFO("Kompact
     },
     origin: {
         title: "Used on this very website!",
-            text: "A tool born from a need to build (mostly) client-sided, yet easily iterated upon, websites."
+        text: "A tool born from a need to build (mostly) client-sided, yet easily iterated upon, websites."
     },
     details: {
         title: "Details",
@@ -213,5 +213,38 @@ Language.setValue(projects[projects.length-1].content, new Project.INFO("StayUpT
     details: {
         title: "Details",
         text: "Stack:\nC#, .NET, Javascript."
+    },
+}), Language.list.ENGLISH.code);
+
+
+projects.push(new Project("REDactor", "Mars 2026", "https://axelbilla.itch.io/redactor", {
+    main: {
+        title: "Qui aurait cru qu'être un patriote soit si compliqué?",
+        text: "Ne laisse pas ses vermines commettre des atrocités sans rétribution!<br>Met fin aux campagnes de diffamation à l'encontre du Président!",
+        image: {src: PATH.IMAGES+"Redactor.png"}
+    },
+    origin: {
+        title: "Un jeu développer à l'occasion de la Game Jam<br>\“Pizza Doggy’s Horror Jam #4\”!",
+        text: "Thème: Érosion.<br>Variateur: Enterré vivant, Chasse aux trésors, Creuser plus loin."
+    },
+    details: {
+        title: "Détails",
+        text: "Stack:\nC#, Unity."
+    }
+}, Language.list.FRENCH.code))
+
+Language.setValue(projects[projects.length-1].content, new Project.INFO("REDactor", "March 2026", "https://axelbilla.itch.io/redactor", {
+    main: {
+        title: "Who knew being a patriot could be this hard?",
+        text: "Don't let those evil vermins get away with their debauchery!<br>Stop the slander of our great President and his Legions!",
+        image: Language.getValue(projects[projects.length-1].content, Language.list.FRENCH.code).content.main.image,
+    },
+    origin: {
+        title: "A game made for the<br>\"Pizza Doggy’s Horror Jam #4\" Game Jam!",
+        text: "Theme: Erosion.<br>Diversifiers: Buried alive, Treasure hunting, Digging deep."
+    },
+    details: {
+        title: "Details",
+        text: "Stack:\nC#, Unity."
     },
 }), Language.list.ENGLISH.code);
