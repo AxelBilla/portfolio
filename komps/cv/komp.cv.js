@@ -32,7 +32,7 @@ class CV{
 //////////////////////////////////
 
 const cvs = {
-    axel: new CV("Axel B.", "https://docs.google.com/document/d/1o0eMfKJwhASeBaNw-NyVNsOEaNg3ICiEJpZq-H7XdHs/", Language.list.FRENCH.code),
+    axel: new CV("Axel B.", "https://docs.google.com/document/d/10MCWkdkgN_4epa4_8X63AyPnD6pgT_mZMEw4avPpbwo/", Language.list.FRENCH.code),
 }
 
-Language.setValue(cvs.axel.content, "https://docs.google.com/document/d/1zdLNmAWnK2qfeHZZYa554N0z0_AKELiISEMZkbejKZQ/", Language.list.ENGLISH.code);
+Language.setValue(cvs.axel.content, "https://docs.google.com/document/d/1FzzamQA2iVRpHZxK5_X-cRYoYrk4UkYtWnhVOmRA8U8/", Language.list.ENGLISH.code);
