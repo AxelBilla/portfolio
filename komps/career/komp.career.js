@@ -256,4 +256,3 @@ Language.setValue(careers[careers.length-1].content,
         }
 
     ), Language.list.ENGLISH.code);
-
