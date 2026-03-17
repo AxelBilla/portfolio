@@ -216,6 +216,37 @@ Language.setValue(projects[projects.length-1].content, new Project.INFO("StayUpT
     },
 }), Language.list.ENGLISH.code);
 
+projects.push(new Project("Pearl", "Mars 2026", "https://github.com/AxelBilla/Pearl", {
+    main: {
+        title: "Votre assistant de bureau personnel!",
+        text: "Accéder à toutes vos applications depuis une interface simple et efficace, modifiable à sa guise.",
+        image: {src: PATH.IMAGES+"Pearl.png"}
+    },
+    origin: {
+        title: "Une application tout-en-un.",
+        text: "La suite d’applications mise à votre disposition ne vous suffit pas? Pourquoi ne pas ajouter les applications que vous souhaitez!"
+    },
+    details: {
+        title: "Détails",
+        text: "Stack:\nC#, Unity,Javascript w/ Node.js & Express.js, PostgreSQL."
+    }
+}, Language.list.FRENCH.code))
+
+Language.setValue(projects[projects.length-1].content, new Project.INFO("Pearl", "March 2026", "https://github.com/AxelBilla/Pearl", {
+    main: {
+        title: "Your very own desktop assistant!",
+        text: "Access all your apps with a comprehensive and customizable interface.",
+        image: Language.getValue(projects[projects.length-1].content, Language.list.FRENCH.code).content.main.image,
+    },
+    origin: {
+        title: "The Anything App.",
+        text: "The built-in suite of apps might not fit all your needs, so why not add any app you'd like by yourself?"
+    },
+    details: {
+        title: "Details",
+        text: "Stack:\nC#, Unity,Javascript w/ Node.js & Express.js, PostgreSQL."
+    },
+}), Language.list.ENGLISH.code);
 
 projects.push(new Project("REDactor", "Mars 2026", "https://axelbilla.itch.io/redactor", {
     main: {
