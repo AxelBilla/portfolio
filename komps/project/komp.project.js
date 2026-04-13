@@ -279,3 +279,35 @@ Language.setValue(projects[projects.length-1].content, new Project.INFO("REDacto
         text: "Stack:\nC#, Unity."
     },
 }), Language.list.ENGLISH.code);
+
+projects.push(new Project("Loveable Saves", "Avril 2026", "https://github.com/AxelBilla/LoveableSaves", {
+    main: {
+        title: "Système de Sauvegarde Ergonomique",
+        text: "Une librairie pour faciliter la sauvegarde et le chargement d'objets, dans des fichiers de sauvegarde, en utilisant le décorateur [Saveable].",
+        image: {src: PATH.IMAGES+"LoveableSaves.png"}
+    },
+    origin: {
+        title: "",
+        text: ""
+    },
+    details: {
+        title: "Détails",
+        text: "Stack:\nC#, Unity, Json.NET."
+    }
+}, Language.list.FRENCH.code))
+
+Language.setValue(projects[projects.length-1].content, new Project.INFO("Loveable Saves", "April 2026", "https://github.com/AxelBilla/LoveableSaves", {
+    main: {
+        title: "Ergonomic Decorator-based Save System",
+        text: "A library meant to facilitate the saving/loading of objects, into save files, using the [Saveable] decorator.",
+        image: Language.getValue(projects[projects.length-1].content, Language.list.FRENCH.code).content.main.image,
+    },
+    origin: {
+        title: "",
+        text: ""
+    },
+    details: {
+        title: "Details",
+        text: "Stack:\nC#, Unity, Json.NET."
+    },
+}), Language.list.ENGLISH.code);
